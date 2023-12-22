@@ -1,6 +1,6 @@
 package com.revature.utile;
 
-public class Users {
+public class User {
 
     private int userId;
     private String firstName;
@@ -10,10 +10,10 @@ public class Users {
     private long phoneNumber;
     private String address;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(int userId, String firstName, String lastName, String email, String passWord, long phoneNumber, String address) {
+    public User(int userId, String firstName, String lastName, String email, String passWord, long phoneNumber, String address) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -81,7 +81,7 @@ public class Users {
 
     @Override
     public String toString() {
-        return "Users{" +
+        return "User{" +
                 "userId=" + userId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +

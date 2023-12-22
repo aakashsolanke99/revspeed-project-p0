@@ -1,4 +1,8 @@
 package com.revature.dao;
 
-public class UserDao {
+import com.revature.utile.User;
+
+
+public interface UserDao {
+    void addUser(User user);
 }

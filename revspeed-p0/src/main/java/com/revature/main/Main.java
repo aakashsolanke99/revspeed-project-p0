@@ -3,6 +3,7 @@ package com.revature.main;
 
 import com.revature.config.DbConnection;
 import com.revature.service.imple.LoginServiceImple;
+import com.revature.utile.User;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -11,7 +12,7 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args)  {
+    public static void main(String[] args)  throws SQLException{
 
         LoginServiceImple loginServiceImple=new LoginServiceImple();
         Scanner sc=new Scanner(System.in);
@@ -27,9 +28,11 @@ public class Main {
 
             switch (choice){
                 case 1:
-                    loginServiceImple.register();break;
-
-
+                    loginServiceImple.register(new User());break;
+                case 2:
+                    loginServiceImple.logIn();break;
+                case 0:
+                    System.exit(0);
                 default:
 
 
