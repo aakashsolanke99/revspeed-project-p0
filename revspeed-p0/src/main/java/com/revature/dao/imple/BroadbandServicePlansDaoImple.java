@@ -17,19 +17,18 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
 
 
 
-        String url="select * from broadband_serice_plan";
+        String url= "{CALL getAllPlansDetails()}";
         try {
-            Statement st= connection.createStatement();
-
-           ResultSet rs= st.executeQuery(url);
+            CallableStatement st= connection.prepareCall(url);
+            ResultSet rs= st.executeQuery();
            while(rs.next()){
                BroadBandServicePlans broadBandServicePlans1=new BroadBandServicePlans();
                broadBandServicePlans1.setPalnId(rs.getInt(1));
                broadBandServicePlans1.setSubscription(rs.getString(2));
                broadBandServicePlans1.setPalnDetails(rs.getString(3));
                broadBandServicePlans1.setAmount(rs.getDouble(4));
-               broadBandServicePlans1.setServiceId(rs.getInt(5));
-               broadBandServicePlans1.setOttPlatformId(rs.getInt(6));
+               broadBandServicePlans1.setServiceName(rs.getString(5));
+               broadBandServicePlans1.setOttPlatformName(rs.getString(6));
 
                broadBandServicePlans.add(broadBandServicePlans1);
            }
@@ -48,9 +47,9 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
     @Override
     public List<BroadBandServicePlans> getPlansBasedOnMonthlyQuarterlyYearly(String str) {
         List<BroadBandServicePlans> broadBandServicePlansOnChoice=new ArrayList<>();
-        String url="select * from broadband_serice_plan where plan=?";
+        String url= "{CALL GetPlansByMonthQuaterlyYearly(?)}";
         try {
-            PreparedStatement ps=connection.prepareStatement(url);
+            PreparedStatement ps=connection.prepareCall(url);
              ps.setString(1,str);
              ResultSet rs= ps.executeQuery();
              while (rs.next()){
@@ -59,8 +58,8 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
                  broadBandServicePlans.setSubscription(rs.getString(2));
                  broadBandServicePlans.setPalnDetails(rs.getString(3));
                  broadBandServicePlans.setAmount(rs.getDouble(4));
-                 broadBandServicePlans.setServiceId(rs.getInt(5));
-                 broadBandServicePlans.setOttPlatformId(rs.getInt(6));
+                 broadBandServicePlans.setServiceName(rs.getString(5));
+                 broadBandServicePlans.setOttPlatformName(rs.getString(6));
 
                  broadBandServicePlansOnChoice.add(broadBandServicePlans);
              }

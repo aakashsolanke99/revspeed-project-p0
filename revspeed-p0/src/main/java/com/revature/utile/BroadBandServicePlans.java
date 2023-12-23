@@ -6,19 +6,19 @@ public class BroadBandServicePlans {
     private String subscription;
     private String palnDetails;
     private double amount;
-    private int serviceId;
-    private int ottPlatformId;
+    private String serviceName;
+    private String ottPlatformName;
 
     public BroadBandServicePlans() {
     }
 
-    public BroadBandServicePlans(int palnId, String subscription, String palnDetails, double amount, int serviceId, int ottPlatformId) {
+    public BroadBandServicePlans(int palnId, String subscription, String palnDetails, double amount, String serviceName, String ottPlatformName) {
         this.palnId = palnId;
         this.subscription = subscription;
         this.palnDetails = palnDetails;
         this.amount = amount;
-        this.serviceId = serviceId;
-        this.ottPlatformId = ottPlatformId;
+        this.serviceName = serviceName;
+        this.ottPlatformName = ottPlatformName;
     }
 
     public int getPalnId() {
@@ -53,31 +53,19 @@ public class BroadBandServicePlans {
         this.amount = amount;
     }
 
-    public int getServiceId() {
-        return serviceId;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public int getOttPlatformId() {
-        return ottPlatformId;
+    public String getOttPlatformName() {
+        return ottPlatformName;
     }
 
-    public void setOttPlatformId(int ottPlatformId) {
-        this.ottPlatformId = ottPlatformId;
-    }
-
-    @Override
-    public String toString() {
-        return "BroadBandServicePlans{" +
-                "palnId=" + palnId +
-                ", subscription='" + subscription + '\'' +
-                ", palnDetails='" + palnDetails + '\'' +
-                ", amount=" + amount +
-                ", serviceId=" + serviceId +
-                ", ottPlatformId=" + ottPlatformId +
-                '}';
+    public void setOttPlatformName(String ottPlatformName) {
+        this.ottPlatformName = ottPlatformName;
     }
 }

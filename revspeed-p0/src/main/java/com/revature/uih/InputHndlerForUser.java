@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class InputHndlerForUser {
-    UserDaoImple uerUserDaoImple=new UserDaoImple();
+    UserDaoImple userDaoImple=new UserDaoImple();
 
    Scanner sc=new Scanner(System.in);
     public void getUserDetailsForRegistration(){
@@ -42,7 +42,7 @@ public class InputHndlerForUser {
 
            User user=new  User(firstName, lastName, email, password, phNumber, address);
             System.out.println(user);
-            uerUserDaoImple.registorDao(user);
+            userDaoImple.registorDao(user);
 
             System.out.println("If you want to continue press - 1/0");
 
@@ -66,7 +66,7 @@ public class InputHndlerForUser {
             System.out.println("Enter Password");
             String password=sc.nextLine();
 
-            uerUserDaoImple.loginDao(email,password);
+            userDaoImple.loginDao(email,password);
         }while(true);
     }
 }

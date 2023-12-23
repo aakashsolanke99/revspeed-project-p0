@@ -27,7 +27,7 @@ public class Main {
                 case 1:
                     userServiceImple.register();break;
                 case 2:
-                  userServiceImple.login(); ;break;
+                    userServiceImple.login(); ;break;
                 case 0:
                     System.exit(0);
                 default:

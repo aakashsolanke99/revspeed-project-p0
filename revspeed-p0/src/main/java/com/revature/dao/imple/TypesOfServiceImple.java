@@ -1,10 +1,12 @@
 package com.revature.dao.imple;
 
+import com.revature.uih.InputHnadlerForServices;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class TypesOfServiceImple implements TypesOfServiceDao{
-    BroadbandServicePlansDaoImple broadbandServicePlansDaoImple=new BroadbandServicePlansDaoImple();
+    InputHnadlerForServices inputHnadlerForServices=new InputHnadlerForServices();
     @Override
     public void getTypesOfService()    {
         int choice;
@@ -22,7 +24,7 @@ public class TypesOfServiceImple implements TypesOfServiceDao{
 
             switch(serviceId){
                 case 1:
-                    broadbandServicePlansDaoImple.getAllPlans();break;
+                    inputHnadlerForServices.getAllServices();
                 case 2:
                     break;
                 default:
