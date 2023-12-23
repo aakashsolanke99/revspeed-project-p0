@@ -1,11 +1,8 @@
 package com.revature.main;
 
 
-import com.revature.config.DbConnection;
-import com.revature.service.imple.LoginServiceImple;
-import com.revature.utile.User;
+import com.revature.service.imple.UserServiceImple;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -14,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)  throws SQLException{
 
-        LoginServiceImple loginServiceImple=new LoginServiceImple();
+        UserServiceImple userServiceImple=new UserServiceImple();
         Scanner sc=new Scanner(System.in);
         System.out.println("==================================================");
         System.out.println("                  Wellcome To RevSpeed            ");
@@ -28,9 +25,9 @@ public class Main {
 
             switch (choice){
                 case 1:
-                    loginServiceImple.register(new User());break;
+                    userServiceImple.register();break;
                 case 2:
-                    loginServiceImple.logIn();break;
+                  userServiceImple.login(); ;break;
                 case 0:
                     System.exit(0);
                 default:

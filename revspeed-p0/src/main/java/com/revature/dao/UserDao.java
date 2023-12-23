@@ -2,7 +2,10 @@ package com.revature.dao;
 
 import com.revature.utile.User;
 
+import java.sql.SQLException;
+
 
 public interface UserDao {
-    void addUser(User user);
+    public void registorDao(User user) throws SQLException;
+    public void loginDao(String email,String password) throws SQLException;
 }

@@ -19,10 +19,10 @@ public class DbConnectionTest {
         assertNotNull(con);
     }
 
-    @Test
-    public void closedConnectionTest(){
-
-//        DbConnection.closeConnection();
-        assertNull(con);
-    }
+//    @Test
+//    public void closedConnectionTest(){
+//
+////        DbConnection.closeConnection();
+//        assertNull(con);
+//    }
 }

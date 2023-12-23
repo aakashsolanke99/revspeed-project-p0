@@ -252,4 +252,23 @@ WHERE USL.user_id = 1;
  
  
  
+ -----------  query for all plans details ------------ 
+ SELECT
+    bsp.br_sr_pl_id AS broadband_plan_id,
+    bsp.plan AS broadband_plan,
+    bsp.Plan_details AS broadband_plan_details,
+    bsp.price AS broadband_price,
+--     s.service_id AS service_id,
+    s.service_name AS service_name,
+   --  op.ott_pl_id AS ott_platform_id,
+   ott_p_name
+FROM
+    Broadband_serice_plan bsp
+JOIN
+    service s ON bsp.service_id = s.service_id
+JOIN
+    ott_platform op ON bsp.ott_pl_id = op.ott_pl_id;
+
+ 
+ 
  

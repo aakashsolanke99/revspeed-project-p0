@@ -1,5 +1,5 @@
 package com.revature.dao.imple;
 
-public interface TypesOfService {
+public interface TypesOfServiceDao {
     public void getTypesOfService();
 }
