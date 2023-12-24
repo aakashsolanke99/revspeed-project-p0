@@ -15,9 +15,9 @@ public class UserDaoImple implements UserDao {
 
     ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
     static Scanner sc=new Scanner(System.in);
-//    ServicesServiceImple servicesServiceImple=new ServicesServiceImple();
+
     private static Connection connection= DbConnection.getConnection();
-    static int loginId;
+    public static int loginId;
     @Override
     public  void registorDao(User user) throws SQLException {
 
@@ -64,7 +64,7 @@ public class UserDaoImple implements UserDao {
                             System.out.println("login successesful");
                             loginId= resultSet.getInt(1);
                             forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
-//                            servicesServiceImple.getServices();
+
                             return;
                         }else{
                             System.out.println("PassWord Does not match/ Wrong PassWWORD");
@@ -76,6 +76,7 @@ public class UserDaoImple implements UserDao {
                 E.printStackTrace();
             }
     }
+
     public static boolean passwordExists(String password) throws SQLException {
         String query = "SELECT COUNT(*) FROM users WHERE pass_word = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {
@@ -89,21 +90,4 @@ public class UserDaoImple implements UserDao {
     }
 
 
-//    public User getUsersDetails() throws SQLException{
-//        User user=new User();
-//        int userId=loginId;
-//        String url="Select * from Users where user_id=?";
-//        PreparedStatement ps=connection.prepareStatement(url);
-//        ps.setInt(1,userId);
-//        ResultSet rs= ps.executeQuery();
-//        while (rs.next()){
-//             user.setFirstName(rs.getString(2));
-//             user.setLastName(rs.getString(3));
-//             user.setEmail(rs.getString(4));
-//             user.setPhoneNumber(rs.getString(6));
-//             user.setAddress(rs.getString(7));
-//        }
-//
-//        return user;
-//    }
 }

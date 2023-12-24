@@ -1,11 +1,13 @@
 package com.revature.uih;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ForBroadBandPlansAndUserDetails {
     Scanner sc = new Scanner(System.in);
     MonthlyQuaterlyYerlyPlansDetails monthlyQuaterlyYerlyPlansDetails=new MonthlyQuaterlyYerlyPlansDetails();
-    public void getAllBroadBandServicePlansAndUserDetails() {
+    IhShowUserDetails ihShowUserDetails=new IhShowUserDetails();
+    public void getAllBroadBandServicePlansAndUserDetails() throws SQLException {
         int choice;
         do{
 
@@ -24,9 +26,10 @@ public class ForBroadBandPlansAndUserDetails {
                   monthlyQuaterlyYerlyPlansDetails.getAllBroadBandServicePlansMQY();
                 case 2:
                     break;
+
                 case 3:
-//                    userServiceImple.userDetails();
-                    break;
+                    ihShowUserDetails.UserDetailsAndOperation();  break;
+
                 default:
 
 

@@ -3,8 +3,10 @@ package com.revature.dao.imple;
 import com.revature.config.DbConnection;
 import com.revature.dao.BroadbandServicePlansDao;
 import com.revature.util.BroadBandServicePlans;
+import com.revature.util.User;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,4 +71,63 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
 
         return broadBandServicePlansOnChoice;
     }
+
+    @Override
+    public User getDetails(int id) throws SQLException {
+        User user=new User();
+        String url="Select * from users where user_id=?";
+
+        PreparedStatement ps=connection.prepareStatement(url);
+        ps.setInt(1,id);
+        ResultSet rs= ps.executeQuery();
+        while (rs.next()){
+            user.setFirstName(rs.getString(2));
+            user.setLastName(rs.getString(3));
+            user.setEmail(rs.getString(4));
+            user.setPhoneNumber(rs.getString(6));
+            user.setAddress(rs.getString(7));
+        }
+
+        return user;
+    }
+
+
+    @Override
+    public void addUserAndPlansToUserServiceLink(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, LocalDate endDate) {
+        try {
+            String query = "INSERT INTO user_service_link (user_id, br_sr_pl_id, dth_sr_pl_id, subscription_start_date, subscription_end_date,is_active) VALUES (?, ?, ?, ?, ?,?)";
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                ps.setInt(1, userId);
+                ps.setInt(2, broadbandPlanId);
+                ps.setInt(3, dthPlanId);
+                ps.setDate(4,  Date.valueOf(startDate));
+                ps.setDate(5,  Date.valueOf(endDate));
+                ps.setInt(6,1);
+
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected > 0) {
+                    System.out.println("Service plan added successfully for user " + userId);
+                } else {
+                    System.out.println("Failed to add service plan for user " + userId);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public String isWhichTypeOfPlan(int id) throws SQLException {
+        String plan="";
+        String query="select plan from broadband_serice_plan where br_sr_pl_id=?";
+        PreparedStatement ps=connection.prepareStatement(query);
+        ps.setInt(1,id);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next()){
+            plan=rs.getString(1);
+        }
+        return plan;
+    }
+
+
 }
