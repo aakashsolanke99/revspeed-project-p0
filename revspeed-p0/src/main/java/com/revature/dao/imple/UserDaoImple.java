@@ -71,6 +71,17 @@ public class UserDaoImple implements UserDao {
                 E.printStackTrace();
             }
     }
+    public static boolean passwordExists(String password) throws SQLException {
+        String query = "SELECT COUNT(*) FROM users WHERE pass_word = ?";
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+            ps.setString(1, password);
+            try (ResultSet rs = ps.executeQuery()) {
+                rs.next();
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        }
+    }
 
 //    @Override
 //    public void loginDaoImpl() throws SQLException {

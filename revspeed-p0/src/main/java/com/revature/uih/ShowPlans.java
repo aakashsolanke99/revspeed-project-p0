@@ -8,7 +8,9 @@ import java.util.List;
 public class ShowPlans {
     BroadbandServicePlansDaoImple broadbandServicePlansDaoImple = new BroadbandServicePlansDaoImple();
 
+
     public void AllPlans() {
+
         List<BroadBandServicePlans> broadBandServicePlans = broadbandServicePlansDaoImple.getAllPlans();
         System.out.println("================= All Plans ============");
         System.out.println("                                          ");

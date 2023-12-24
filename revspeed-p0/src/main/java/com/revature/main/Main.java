@@ -13,11 +13,12 @@ public class Main {
 
         UserServiceImple userServiceImple=new UserServiceImple();
         Scanner sc=new Scanner(System.in);
-        System.out.println("==================================================");
-        System.out.println("                  Wellcome To RevSpeed            ");
-        System.out.println("==================================================");
 
         do{
+            System.out.println("==================================================");
+            System.out.println("                  Wellcome To RevSpeed            ");
+            System.out.println("==================================================");
+
             System.out.println("                                               ");
             System.out.println("Enter 1 For Register");
             System.out.println("Enter 2 For Login");

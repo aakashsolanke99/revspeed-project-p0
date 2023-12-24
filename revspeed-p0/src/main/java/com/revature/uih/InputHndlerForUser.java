@@ -36,9 +36,14 @@ public class InputHndlerForUser {
             System.out.print("Enter Your PassWord");
 
             String password = sc.nextLine();
+            Boolean isPasswordPresent = userDaoImple.passwordExists(password);
             if (!isValidPassword(password)) {
                 System.out.println("Invalid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.");
                 return; // Exit the program or handle the error as needed
+            }
+            if( isPasswordPresent){
+                System.out.println("Password Already Exist Use another password");
+                return;
             }
 //            Console console = System.console();
 //            String password="";
@@ -104,24 +109,26 @@ public class InputHndlerForUser {
         }while(true);
     }
 
-    private static boolean isValidEmail(String email) {
+     static boolean isValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return Pattern.matches(emailRegex, email);
     }
 
     // Validate password criteria
-    private static boolean isValidPassword(String password) {
+     static boolean isValidPassword(String password) {
         // Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit
         return password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*[a-z].*") && password.matches(".*\\d.*");
     }
 
-    private static boolean isValidName(String name) {
+     static boolean isValidName(String name) {
         // Name should not be empty and should contain only letters
         return !name.trim().isEmpty() && name.matches("^[a-zA-Z]+$");
     }
 
-    private static boolean isValidPhoneNumber(String phoneNumber) {
+     static boolean isValidPhoneNumber(String phoneNumber) {
         // Phone number should contain only digits and may include optional dashes or spaces
         return phoneNumber.matches("^[0-9\\-\\s]+$");
     }
+
+
 }
