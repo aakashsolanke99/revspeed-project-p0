@@ -28,13 +28,22 @@ class UserServiceImpleTest {
     }
 
     @Test
-    void testRegister() {
+    void testRegister() throws Exception {
         // Setup
         // Run the test
         userServiceImpleUnderTest.register();
 
         // Verify the results
         verify(mockInputHndlerForUser).getUserDetailsForRegistration();
+    }
+
+    @Test
+    void testRegister_InputHndlerForUserThrowsSQLException() throws Exception {
+        // Setup
+        doThrow(SQLException.class).when(mockInputHndlerForUser).getUserDetailsForRegistration();
+
+        // Run the test
+        assertThrows(SQLException.class, () -> userServiceImpleUnderTest.register());
     }
 
     @Test
@@ -45,14 +54,5 @@ class UserServiceImpleTest {
 
         // Verify the results
         verify(mockInputHndlerForUser).getDetailsForLogin();
-    }
-
-    @Test
-    void testLogin_InputHndlerForUserThrowsSQLException() throws Exception {
-        // Setup
-        doThrow(SQLException.class).when(mockInputHndlerForUser).getDetailsForLogin();
-
-        // Run the test
-        assertThrows(SQLException.class, () -> userServiceImpleUnderTest.login());
     }
 }

@@ -16,7 +16,7 @@ public class UserDaoImple implements UserDao {
     ServicesServiceImple servicesServiceImple=new ServicesServiceImple();
     private static Connection connection= DbConnection.getConnection();
     @Override
-    public  void registorDao(User user) {
+    public  void registorDao(User user) throws SQLException {
 
 
         try {
@@ -37,7 +37,7 @@ public class UserDaoImple implements UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        connection.close();
     }
 
     @Override

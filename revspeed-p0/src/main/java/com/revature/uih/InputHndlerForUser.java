@@ -11,7 +11,7 @@ public class InputHndlerForUser {
     UserDaoImple userDaoImple=new UserDaoImple();
 
    Scanner sc=new Scanner(System.in);
-    public void getUserDetailsForRegistration(){
+    public void getUserDetailsForRegistration() throws SQLException {
         int reg=0;
         do {
             System.out.println("========= Registration ==========");

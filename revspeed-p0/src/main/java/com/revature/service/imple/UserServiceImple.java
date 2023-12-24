@@ -9,7 +9,7 @@ public class UserServiceImple implements UserService {
     InputHndlerForUser inputHndlerForUser=new InputHndlerForUser();
 
     @Override
-    public void register() {
+    public void register() throws SQLException {
         inputHndlerForUser.getUserDetailsForRegistration();
     }
 
