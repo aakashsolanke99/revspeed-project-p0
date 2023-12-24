@@ -3,6 +3,8 @@ package com.revature.uih;
 import com.revature.dao.imple.BroadbandServicePlansDaoImple;
 //import com.revature.dao.imple.UserDaoImple;
 import com.revature.dao.imple.UserDaoImple;
+import com.revature.services.BroadBandPlansService;
+import com.revature.services.imple.BroadBandPlansServiceImple;
 import com.revature.services.imple.UserServiceImple;
 import com.revature.util.User;
 
@@ -12,7 +14,8 @@ import java.util.Scanner;
 public class IhShowUserDetails {
 
     BroadbandServicePlansDaoImple broadbandServicePlansDaoImple=new BroadbandServicePlansDaoImple();
-    Scanner sc=new Scanner(System.in);
+    static  UserServiceImple userServiceImple=new UserServiceImple();
+    static Scanner sc=new Scanner(System.in);
 
     public void UserDetailsAndOperation() throws SQLException {
         System.out.println("======================================");
@@ -30,15 +33,26 @@ public class IhShowUserDetails {
         System.out.println("Address :- "+user1.getAddress());
         System.out.println("                                         ");
 
+        int id=user1.getUserId();
         System.out.println("1- Change Password");
         int choice=sc.nextInt();
-
-
+        sc.nextLine();
+        String oldPassword=user1.getPassWord();
+        if(choice==1){
+            IhShowUserDetails.changePassword(oldPassword,id);
+        }
 
     }
 
-    public Boolean changePassword(){
-        System.out.println("");
+   static public Boolean changePassword(String oldPass,int id) throws SQLException {
+
+       System.out.println("Enter old PassWord");
+       String oldPasswordForCheck=sc.nextLine();
+       if(oldPasswordForCheck.equals(oldPass)){
+           System.out.println("Enter New PassWord");
+           String newPass=sc.nextLine();
+           userServiceImple.changePassWordService(newPass,id);
+       }
         return true;
     }
 

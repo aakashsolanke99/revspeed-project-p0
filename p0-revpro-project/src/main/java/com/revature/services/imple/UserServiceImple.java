@@ -9,8 +9,8 @@ import java.sql.SQLException;
 
 public class UserServiceImple implements UserService {
     InputHndlerForUser inputHndlerForUser=new InputHndlerForUser();
-
     UserDaoImple userDaoImple=new UserDaoImple();
+//    UserDaoImple userDaoImple=new UserDaoImple();
     @Override
     public void register() throws SQLException {
         inputHndlerForUser.getUserDetailsForRegistration();
@@ -19,6 +19,11 @@ public class UserServiceImple implements UserService {
     @Override
     public void login() throws SQLException {
         inputHndlerForUser.getDetailsForLogin();
+    }
+
+    @Override
+    public void changePassWordService(String newPass, int id) throws SQLException {
+        userDaoImple.changePassword(newPass,id);
     }
 
 //    @Override

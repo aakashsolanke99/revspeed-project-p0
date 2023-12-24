@@ -81,9 +81,11 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
         ps.setInt(1,id);
         ResultSet rs= ps.executeQuery();
         while (rs.next()){
+            user.setUserId(rs.getInt(1));
             user.setFirstName(rs.getString(2));
             user.setLastName(rs.getString(3));
             user.setEmail(rs.getString(4));
+            user.setPassWord(rs.getString(5));
             user.setPhoneNumber(rs.getString(6));
             user.setAddress(rs.getString(7));
         }

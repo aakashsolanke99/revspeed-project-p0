@@ -19,7 +19,7 @@ public class MonthlyQuaterlyYerlyPlansDetails {
             System.out.println("2- For Monthly Plans ");
             System.out.println("3- For Quaterly Plans");
             System.out.println("4- For Yearly plans");
-            System.out.println("5 - Purches Plan");
+            System.out.println("5 - Purchase Plan");
             System.out.println("0 - For Exit");
             int choice = sc.nextInt();
             sc.nextLine();

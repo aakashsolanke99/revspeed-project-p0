@@ -77,6 +77,18 @@ public class UserDaoImple implements UserDao {
             }
     }
 
+    @Override
+    public void changePassword(String newPass,int id) throws SQLException {
+        String query=" update  users set pass_word=? where user_id=?";
+        PreparedStatement ps=connection.prepareStatement(query);
+        ps.setString(1,newPass);
+        ps.setInt(2,id);
+//        ResultSet rs= ps.executeQuery();
+        System.out.println("password update Successfully");
+
+    }
+
+
     public static boolean passwordExists(String password) throws SQLException {
         String query = "SELECT COUNT(*) FROM users WHERE pass_word = ?";
         try (PreparedStatement ps = connection.prepareStatement(query)) {

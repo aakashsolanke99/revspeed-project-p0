@@ -9,4 +9,5 @@ public interface UserService {
     public void login() throws SQLException;
 
 //    public User getUsersDetailsInService() throws SQLException;
+    public void changePassWordService(String newPass,int id) throws SQLException;
 }
