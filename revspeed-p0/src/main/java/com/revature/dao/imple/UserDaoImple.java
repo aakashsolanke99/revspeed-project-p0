@@ -27,7 +27,7 @@ public class UserDaoImple implements UserDao {
             ps.setString(2,user.getLastName());
             ps.setString(3,user.getEmail());
             ps.setString(4,user.getPassWord());
-            ps.setLong(5,user.getPhoneNumber());
+            ps.setString(5,user.getPhoneNumber());
             ps.setString(6,user.getAddress());
 
             ps.executeUpdate();
@@ -61,6 +61,8 @@ public class UserDaoImple implements UserDao {
                             System.out.println("login successesful");
                             servicesServiceImple.getServices();
                             return;
+                        }else{
+                            System.out.println("PassWord Does not match/ Wrong PassWWORD");
                         }
                     }
                 }

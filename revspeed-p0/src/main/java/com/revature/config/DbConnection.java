@@ -27,32 +27,4 @@ public class DbConnection {
         return connection;
     }
 
-
-//    public static void closeConnection() {
-//        boolean myCon;
-//        try {
-//            connection.close();
-//            System.out.println("connection closed");
-//
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//    }
-
-//    public static Connection getConnection() throws SQLException {
-//        if (connection != null){
-//            return  connection;
-//        }
-//
-//        String db_name="practice_reppro";
-//        String user = "root";
-//        String pass = "Aakash@123";
-//
-//        return DriverManager.getConnection("jdbc:mysql://localhost/"+db_name+"?user="+user+"&password="+pass);
-//    }
-
-
-
-
 }

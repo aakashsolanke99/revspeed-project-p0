@@ -7,13 +7,13 @@ public class User {
     private String lastName;
     private String email;
     private String passWord;
-    private long phoneNumber;
+    private String phoneNumber;
     private String address;
 
     public User() {
     }
 
-    public User(int userId, String firstName, String lastName, String email, String passWord, long phoneNumber, String address) {
+    public User(int userId, String firstName, String lastName, String email, String passWord, String phoneNumber, String address) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,7 +23,7 @@ public class User {
         this.address = address;
     }
 
-    public User(String firstName, String lastName, String email, String password, long phNumber, String address) {
+    public User(String firstName, String lastName, String email, String password, String phNumber, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -72,11 +72,11 @@ public class User {
         this.passWord = passWord;
     }
 
-    public long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -88,16 +88,5 @@ public class User {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", passWord='" + passWord + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                ", address='" + address + '\'' +
-                '}';
-    }
+
 }

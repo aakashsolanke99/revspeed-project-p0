@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da4298ef-de5d-468a-bedd-3a79187aacc4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/imple/BroadbandServicePlansDaoImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/imple/BroadbandServicePlansDaoImple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/imple/TypesOfServiceImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/imple/TypesOfServiceImple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/config/DbConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/config/DbConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/dao/imple/UserDaoImple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/dao/imple/UserDaoImple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/uih/InputHnadlerForServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/uih/InputHnadlerForServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/uih/InputHndlerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/uih/InputHndlerForUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/uih/ShowPlans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/uih/ShowPlans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/utile/BroadBandServicePlans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/utile/BroadBandServicePlans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/utile/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/utile/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/DbConnection/DbConnectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/dao/loginDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/main/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/service/LoginServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/utile/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/revature/utile/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +25,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2ZxBJA3kgWqX4l7nsgia6Z8iWa1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,12 +39,119 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.BroadBandServicePlansTest.executor": "Run",
+    "JUnit.BroadbandServicesServiceImpleTest.executor": "Run",
+    "JUnit.DbConnectionTest.executor": "Run",
+    "JUnit.DbConnectionTest.testGetConnection.executor": "Run",
+    "JUnit.InputHndlerForUserTest.testGetDetailsForLogin.executor": "Run",
+    "JUnit.InputHndlerForUserTest.testGetDetailsForLogin_ScannerThrowsNoSuchElementException.executor": "Run",
+    "JUnit.InputHndlerForUserTest.testGetDetailsForLogin_UserDaoImpleThrowsSQLException.executor": "Run",
+    "JUnit.InputHndlerForUserTest.testGetUserDetailsForRegistration.executor": "Run",
+    "JUnit.MainTest.testMain.executor": "Run",
+    "JUnit.MainTest.testMain_ThrowsSQLException.executor": "Run",
+    "JUnit.ServicesServiceImpleTest.executor": "Run",
+    "JUnit.UserServiceImpleTest.executor": "Run",
+    "JUnit.UserTest.executor": "Run",
+    "JUnit.UserTest.testPhoneNumberGetterAndSetter.executor": "Run",
+    "Maven.revspeed-p0 [clean].executor": "Run",
+    "Maven.revspeed-p0 [compile].executor": "Run",
+    "Maven.revspeed-p0 [test].executor": "Run",
+    "Maven.revspeed-p0 [validate].executor": "Run",
+    "Maven.revspeed-p0 [verify].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revature.main.Main" />
+      <module name="revspeed-p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputHndlerForUserTest.testGetDetailsForLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="revspeed-p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.uih.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.uih" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.uih.InputHndlerForUserTest" />
+      <option name="METHOD_NAME" value="testGetDetailsForLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputHndlerForUserTest.testGetDetailsForLogin_ScannerThrowsNoSuchElementException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="revspeed-p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.uih.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.uih" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.uih.InputHndlerForUserTest" />
+      <option name="METHOD_NAME" value="testGetDetailsForLogin_ScannerThrowsNoSuchElementException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputHndlerForUserTest.testGetDetailsForLogin_UserDaoImpleThrowsSQLException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="revspeed-p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.uih.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.uih" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.uih.InputHndlerForUserTest" />
+      <option name="METHOD_NAME" value="testGetDetailsForLogin_UserDaoImpleThrowsSQLException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InputHndlerForUserTest.testGetUserDetailsForRegistration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="revspeed-p0" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.uih.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.uih" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.uih.InputHndlerForUserTest" />
+      <option name="METHOD_NAME" value="testGetUserDetailsForRegistration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.InputHndlerForUserTest.testGetDetailsForLogin" />
+        <item itemvalue="JUnit.InputHndlerForUserTest.testGetDetailsForLogin_UserDaoImpleThrowsSQLException" />
+        <item itemvalue="JUnit.InputHndlerForUserTest.testGetDetailsForLogin_ScannerThrowsNoSuchElementException" />
+        <item itemvalue="JUnit.InputHndlerForUserTest.testGetUserDetailsForRegistration" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
