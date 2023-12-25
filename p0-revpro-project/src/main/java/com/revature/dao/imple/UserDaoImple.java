@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 public class UserDaoImple implements UserDao {
 
     ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
@@ -86,6 +88,92 @@ public class UserDaoImple implements UserDao {
 //        ResultSet rs= ps.executeQuery();
         System.out.println("password update Successfully");
 
+    }
+
+    @Override
+    public void updateProfile(int id) throws SQLException {
+
+        System.out.println("==================== Update profile ==========");
+        int check;
+        do {
+            out.println("Select what you want to update");
+            out.println("1- First Name");
+
+            out.println("2- Last Name");
+            out.println("3- Email ID");
+            out.println("4- Phone Number");
+            out.println("5- Address");
+
+            out.println("Enter your choice");
+            int  check1= sc.nextInt();
+            sc.nextLine();
+
+            switch(check1) {
+
+                case 1:
+                    String query="Update users set first_name=? where user_id=?";
+                    out.print("Enter The first Name which you want to change :- ");
+                    String firstName= sc.nextLine();
+                    PreparedStatement ps=connection.prepareStatement(query);
+                    ps.setString(1,firstName);
+                    ps.setInt(2,id);
+                    ps.executeUpdate();
+                    out.println("First Name Update Successful");
+                    ;break;
+
+                case 2:
+                    String query1="Update users set last_name=? where user_id=?";
+                    out.print("Enter The Last Name which you want to change :- ");
+                    String LastName= sc.nextLine();
+                    PreparedStatement ps1=connection.prepareStatement(query1);
+                    ps1.setString(1,LastName);
+                    ps1.setInt(2,id);
+                    ps1.executeUpdate();
+                    out.println("Last name Update Successful");
+                    ;break;
+
+                case 3:
+                    String query3="Update users set email=? where user_id=?";
+                    out.print("Enter The email id which you want to change :- ");
+                    String email= sc.nextLine();
+                    PreparedStatement ps3=connection.prepareStatement(query3);
+                    ps3.setString(1,email);
+                    ps3.setInt(2,id);
+                    ps3.executeUpdate();
+                    out.println("Email Update Successful");
+                    ;break;
+
+                case 4:
+                    String query4="Update users set phone_no=? where user_id=?";
+                    out.print("Enter The phone number which you want to change :- ");
+                    String phoneNumber= sc.nextLine();
+                    PreparedStatement ps4=connection.prepareStatement(query4);
+                    ps4.setString(1,phoneNumber);
+                    ps4.setInt(2,id);
+                    ps4.executeUpdate();
+                    out.println("Phone no Update Successful")
+                    ;break;
+
+                case 5:
+                    String query5="Update users set phone_no=? where user_id=?";
+                    out.print("Enter The phone number which you want to change :- ");
+                    String address= sc.nextLine();
+                    PreparedStatement ps5=connection.prepareStatement(query5);
+                    ps5.setString(1,address);
+                    ps5.setInt(2,id);
+                    ps5.executeUpdate();
+                    out.println("Adress Update Successful");
+                    break;
+
+                default :
+                    out.println("Number not found");
+
+            }
+
+            out.println("if you want to update more press 1 otherwise any key");
+            check=sc.nextInt();
+            sc.nextLine();
+        }while(check==1);
     }
 
 

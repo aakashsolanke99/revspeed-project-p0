@@ -7,7 +7,7 @@ import com.revature.services.BroadBandPlansService;
 import com.revature.services.imple.BroadBandPlansServiceImple;
 import com.revature.services.imple.UserServiceImple;
 import com.revature.util.User;
-
+import static java.lang.System.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -34,12 +34,19 @@ public class IhShowUserDetails {
         System.out.println("                                         ");
 
         int id=user1.getUserId();
-        System.out.println("1- Change Password");
-        int choice=sc.nextInt();
-        sc.nextLine();
+        System.out.println("1- Change Password  \t   2-Update Profile Details");
+        int choice=0;
+        try{
+            choice=sc.nextInt();
+            sc.nextLine();
+        }catch (Exception e){
+            System.out.println("Please provide Integer value");
+        }
         String oldPassword=user1.getPassWord();
         if(choice==1){
             IhShowUserDetails.changePassword(oldPassword,id);
+        }else if(choice==2){
+           userServiceImple.pudateProfile(id);
         }
 
     }
@@ -55,5 +62,6 @@ public class IhShowUserDetails {
        }
         return true;
     }
+
 
 }

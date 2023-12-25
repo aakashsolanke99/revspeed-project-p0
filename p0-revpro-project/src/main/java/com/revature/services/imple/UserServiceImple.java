@@ -2,6 +2,7 @@ package com.revature.services.imple;
 
 import com.revature.dao.imple.UserDaoImple;
 import com.revature.services.UserService;
+import com.revature.uih.IhShowUserDetails;
 import com.revature.uih.InputHndlerForUser;
 import com.revature.util.User;
 
@@ -9,6 +10,7 @@ import java.sql.SQLException;
 
 public class UserServiceImple implements UserService {
     InputHndlerForUser inputHndlerForUser=new InputHndlerForUser();
+    IhShowUserDetails ihShowUserDetails=new IhShowUserDetails();
     UserDaoImple userDaoImple=new UserDaoImple();
 //    UserDaoImple userDaoImple=new UserDaoImple();
     @Override
@@ -26,8 +28,9 @@ public class UserServiceImple implements UserService {
         userDaoImple.changePassword(newPass,id);
     }
 
-//    @Override
-//    public User getUsersDetailsInService()  {
-//        return userDaoImple.getUserDetails();
-//    }
+    @Override
+    public void pudateProfile(int id) throws SQLException {
+        userDaoImple.updateProfile(id);
+    }
+
 }

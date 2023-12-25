@@ -10,4 +10,6 @@ public interface UserService {
 
 //    public User getUsersDetailsInService() throws SQLException;
     public void changePassWordService(String newPass,int id) throws SQLException;
+
+    public void pudateProfile(int id) throws SQLException;
 }
