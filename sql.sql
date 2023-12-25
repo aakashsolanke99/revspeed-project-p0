@@ -125,7 +125,7 @@ SELECT * FROM Dth_service;
  
 DROP TABLE Dth_service_plans;
 CREATE TABLE Dth_service_plans (
-    dth_sr_pl_id INT PRIMARY KEY,
+    dth_sr_pl_id INT PRIMARY KEY auto_increment,
     dth_sr_id INT,
     language VARCHAR(25),
     channel_category VARCHAR(25),
@@ -134,21 +134,47 @@ CREATE TABLE Dth_service_plans (
 );
  
 -- Insert data into DTH_channels (Hindi channels)
-INSERT INTO Dth_service_plans (dth_sr_pl_id, dth_sr_id, language, channel_category, price) VALUES
-(1, 2, 'hindi', 'entertainment', 50),
-(2, 2, 'hindi', 'sports', 50),
-(3, 2, 'hindi', 'news', 50);
+INSERT INTO Dth_service_plans ( dth_sr_id, language, channel_category, price) VALUES
+( 2, 'hindi', 'entertainment', 50),
+( 2, 'hindi', 'sports', 50),
+( 2, 'hindi', 'news', 50);
+
  
 -- Insert data into DTH_channels (Tamil channels)
-INSERT INTO Dth_service_plans (dth_sr_pl_id, dth_sr_id, language, channel_category, price) VALUES
-(4, 2, 'marathi', 'entertainment', 60),
-(5, 2, 'marathi', 'sports', 60),
-(6, 2, 'marathi', 'news', 60);
+INSERT INTO Dth_service_plans ( dth_sr_id, language, channel_category, price) VALUES
+( 2, 'marathi', 'entertainment', 60),
+( 2, 'marathi', 'sports', 60),
+( 2, 'marathi', 'news', 60);
+
+
+INSERT INTO Dth_service_plans ( dth_sr_id, language, channel_category, price) VALUES
+( 1, 'hindi', 'entertainment', 50),
+( 1, 'hindi', 'sports', 50),
+(1, 'hindi', 'news', 50);
+
+ 
+-- Insert data into DTH_channels (Tamil channels)
+INSERT INTO Dth_service_plans ( dth_sr_id, language, channel_category, price) VALUES
+(3, 'marathi', 'entertainment', 60),
+(3, 'marathi', 'sports', 60),
+(3, 'marathi', 'news', 60);
+
+INSERT INTO Dth_service_plans (dth_sr_id, language, channel_category, price) VALUES
+( 3, 'hindi', 'entertainment', 50),
+( 3, 'hindi', 'sports', 50),
+(3, 'hindi', 'news', 50);
+
+ 
+-- Insert data into DTH_channels (Tamil channels)
+INSERT INTO Dth_service_plans ( dth_sr_id, language, channel_category, price) VALUES
+(1, 'marathi', 'entertainment', 60),
+(1, 'marathi', 'sports', 60),
+(1, 'marathi', 'news', 60);
  
 -- Create DTH_channel_details table
 DROP TABLE DTH_channel_details;
 CREATE TABLE DTH_channel_details (
-    dth_chnl_dt_id INT PRIMARY KEY,
+    dth_chnl_dt_id INT PRIMARY KEY auto_increment,
     dth_chnl_id INT,
     channel_name VARCHAR(50),
     price DECIMAL(10, 2),
@@ -188,6 +214,39 @@ INSERT INTO DTH_channel_details VALUES
 INSERT INTO DTH_channel_details VALUES
 (15, 6, 'Marathi_News_1', 2),
 (16, 6, 'Marathi_News_2', 2);
+
+INSERT INTO DTH_channel_details VALUES
+(17, 7, 'Hindi_Entertainment_1', 5),
+(18, 7, 'Hindi_Entertainment_2', 5),
+(19, 7, 'Hindi_Entertainment_3', 5),
+(20, 7, 'Hindi_Entertainment_4', 5);
+ 
+-- Insert data into DTH_channel_details (Hindi sports channels)
+INSERT INTO DTH_channel_details VALUES
+(21, 8, 'Hindi_Sports_1', 8),
+(22, 8, 'Hindi_Sports_2', 8),
+(23, 8, 'Hindi_Sports_3', 8);
+ 
+-- Insert data into DTH_channel_details (Hindi news channels)
+INSERT INTO DTH_channel_details VALUES
+(24, 9, 'Hindi_News_1', 3),
+(25, 9, 'Hindi_News_2', 3);
+ 
+-- Insert data into DTH_channel_details (Tamil entertainment channels)
+INSERT INTO DTH_channel_details VALUES
+(26, 10, 'Marathi_Entertainment_1', 4),
+(27, 10, 'Marathi_Entertainment_2', 4);
+ 
+-- Insert data into DTH_channel_details (Tamil sports channels)
+INSERT INTO DTH_channel_details VALUES
+(28, 10, 'Marathi_Sports_1', 6),
+(29, 10, 'Marathi_Sports_2', 6),
+(30, 10, 'Marathi_Sports_3', 6);
+ 
+-- Insert data into DTH_channel_details (Tamil news channels)
+INSERT INTO DTH_channel_details VALUES
+(31, 11, 'Marathi_News_1', 2),
+(32, 11, 'Marathi_News_2', 2);
  
  
 
@@ -294,3 +353,144 @@ end //
 delimiter ;
  
  call GetPlansByMonthQuaterlyYearly("yearly");
+ 
+ use revpro;
+SELECT dth_service_plans, language, channel_category, price 
+                     FROM Dth_service_plans 
+                     INNER JOIN DTH_channel_details ON Dth_service_plans.dth_sr_pl_id = DTH_channel_details.dth_chnl_id
+                     INNER JOIN user_service_link ON Dth_service_plans.dth_sr_id = user_service_link.dth_sr_pl_id 
+                     WHERE user_service_link.is_active = 1 ;
+                     
+                     
+                     SELECT Dth_service.dth_service_plans, language, channel_category
+                     FROM Dth_service_plans 
+                     INNER JOIN DTH_channel_details ON Dth_service_plans.dth_sr_pl_id = DTH_channel_details.dth_chnl_id 
+                     INNER JOIN user_service_link ON Dth_service_plans.dth_sr_id = user_service_link.dth_sr_pl_id 
+                     INNER JOIN Dth_service ON Dth_service_plans.dth_sr_id = Dth_service.dth_sr_id ;
+                    
+
+SELECT
+    Dth_service.dth_service_plans,
+    Dth_service_plans.language,
+    Dth_service_plans.channel_category,
+    DTH_channel_details.channel_name,
+    DTH_channel_details.price
+FROM
+    Dth_service
+JOIN
+    Dth_service_plans ON Dth_service.dth_sr_id = Dth_service_plans.dth_sr_id
+JOIN
+    DTH_channel_details ON Dth_service_plans.dth_sr_pl_id = DTH_channel_details.dth_chnl_id
+JOIN
+    user_service_link ON Dth_service_plans.dth_sr_id = user_service_link.dth_sr_pl_id
+WHERE
+    user_service_link.is_active = 1;
+    
+    
+    
+    SELECT
+    DS.dth_service_plans,
+    DSP.language,
+    DSP.channel_category,
+    DCD.channel_name,
+    DCD.price
+FROM
+    DTH_service DS
+JOIN
+    Dth_service_plans DSP ON DS.dth_sr_id = DSP.dth_sr_id
+JOIN
+    DTH_channel_details DCD ON DSP.dth_sr_pl_id = DCD.dth_chnl_id
+    ;
+    
+    
+    
+  
+SELECT
+    DS.dth_service_plans,
+    DSP.language,
+    DSP.channel_category,
+    DCD.channel_name,
+    DCD.price
+FROM
+    DTH_service DS
+LEFT JOIN
+    Dth_service_plans DSP ON DS.dth_sr_id = DSP.dth_sr_id
+LEFT JOIN
+    DTH_channel_details DCD ON DSP.dth_sr_pl_id = DCD.dth_chnl_id
+WHERE
+    DS.dth_service_plans IN ('monthly', 'quarterly', 'yearly');
+
+
+----- GET ALL DETAILS OF DTH pland -----
+SELECT
+    DS.dth_service_plans,
+    DSP.language,
+    DSP.channel_category,
+    DCD.channel_name,
+    DCD.price
+FROM
+    DTH_service DS
+JOIN
+    Dth_service_plans DSP ON DS.dth_sr_id = DSP.dth_sr_id
+JOIN
+    DTH_channel_details DCD ON DSP.dth_sr_pl_id = DCD.dth_chnl_id
+where DS.dth_service_plans="monthly";
+
+delimiter //
+create procedure getAllDthPlans()
+begin 
+SELECT
+    DS.dth_service_plans,
+    DSP.language,
+    DSP.channel_category,
+    DCD.channel_name,
+    DCD.price
+FROM
+    DTH_service DS
+JOIN
+    Dth_service_plans DSP ON DS.dth_sr_id = DSP.dth_sr_id
+JOIN
+    DTH_channel_details DCD ON DSP.dth_sr_pl_id = DCD.dth_chnl_id;
+end//
+delimiter ;
+
+call getAllDthPlans();
+
+delimiter //
+create procedure getDthPlanBasedOnMQE(IN plan varchar(20))
+begin
+SELECT
+    DS.dth_service_plans,
+    DSP.language,
+    DSP.channel_category,
+    DCD.channel_name,
+    DCD.price
+FROM
+    DTH_service DS
+JOIN
+    Dth_service_plans DSP ON DS.dth_sr_id = DSP.dth_sr_id
+JOIN
+    DTH_channel_details DCD ON DSP.dth_sr_pl_id = DCD.dth_chnl_id
+where DS.dth_service_plans=plan;
+end //
+delimiter ;
+
+call getDthPlanBasedOnMQE("yearly");
+
+
+SELECT ds.dth_sr_id, ds.service_id, ds.dth_service_plans,
+       dsp.dth_sr_pl_id, dsp.language, dsp.channel_category, dsp.price,
+       dcd.dth_chnl_dt_id, dcd.channel_name, dcd.price
+FROM DTH_service AS ds
+JOIN DTH_service_plans AS dsp ON ds.dth_sr_id = dsp.dth_sr_id
+JOIN DTH_channel_details AS dcd ON dsp.dth_sr_pl_id = dcd.dth_chnl_id;
+
+
+---  get all plans based on users input -----
+SELECT ds.dth_sr_id, ds.service_id, ds.dth_service_plans,
+                    dsp.dth_sr_pl_id, dsp.language, dsp.channel_category, dsp.price,
+                    dcd.dth_chnl_dt_id, dcd.channel_name, dcd.price 
+                    FROM DTH_service AS ds 
+                    JOIN DTH_service_plans AS dsp ON ds.dth_sr_id = dsp.dth_sr_id 
+                    JOIN DTH_channel_details AS dcd ON dsp.dth_sr_pl_id = dcd.dth_chnl_id 
+                    WHERE ds.dth_service_plans ="monthly" AND dsp.language = "hindi" AND dsp.channel_category = "sports"

@@ -18,6 +18,8 @@ public class IhShowUserDetails {
     static Scanner sc=new Scanner(System.in);
 
     public void UserDetailsAndOperation() throws SQLException {
+        int check=0;
+        do{
         System.out.println("======================================");
         System.out.println("           User details               ");
         System.out.println("======================================");
@@ -33,21 +35,33 @@ public class IhShowUserDetails {
         System.out.println("Address :- "+user1.getAddress());
         System.out.println("                                         ");
 
-        int id=user1.getUserId();
-        System.out.println("1- Change Password  \t   2-Update Profile Details");
-        int choice=0;
-        try{
-            choice=sc.nextInt();
+
+            int id=user1.getUserId();
+            System.out.println("1- Change Password  \t   2-Update Profile Details  \t  3-Exit");
+            int choice=0;
+            try{
+                choice=sc.nextInt();
+                sc.nextLine();
+            }catch (Exception e){
+                System.out.println("Please provide Integer value");
+            }
+            String oldPassword=user1.getPassWord();
+            if(choice==1){
+                IhShowUserDetails.changePassword(oldPassword,id);
+            }else if(choice==2){
+                userServiceImple.pudateProfile(id);
+            }else if(choice==3){
+                return;
+            }
+            else{
+                out.println("Invalid choice please provide correct input");
+            }
+
+            out.println("If you want to See or update profile press-1 otherwise any key");
+            check= sc.nextInt();
             sc.nextLine();
-        }catch (Exception e){
-            System.out.println("Please provide Integer value");
-        }
-        String oldPassword=user1.getPassWord();
-        if(choice==1){
-            IhShowUserDetails.changePassword(oldPassword,id);
-        }else if(choice==2){
-           userServiceImple.pudateProfile(id);
-        }
+
+        }while (check==1);
 
     }
 

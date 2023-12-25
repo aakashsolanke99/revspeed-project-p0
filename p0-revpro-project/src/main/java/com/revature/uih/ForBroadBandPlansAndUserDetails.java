@@ -7,6 +7,7 @@ public class ForBroadBandPlansAndUserDetails {
     Scanner sc = new Scanner(System.in);
     MonthlyQuaterlyYerlyPlansDetails monthlyQuaterlyYerlyPlansDetails=new MonthlyQuaterlyYerlyPlansDetails();
     IhShowUserDetails ihShowUserDetails=new IhShowUserDetails();
+    DthServicePlansDetails dthServicePlansDetails=new DthServicePlansDetails();
     public void getAllBroadBandServicePlansAndUserDetails() throws SQLException {
         int choice;
         do{
@@ -23,19 +24,23 @@ public class ForBroadBandPlansAndUserDetails {
 
             switch(serviceId){
                 case 1:
-                  monthlyQuaterlyYerlyPlansDetails.getAllBroadBandServicePlansMQY();
+                  monthlyQuaterlyYerlyPlansDetails.getAllBroadBandServicePlansMQY();break;
                 case 2:
-                    break;
+                  dthServicePlansDetails.getAllDthPlansDetails();
+                  break;
 
                 case 3:
                     ihShowUserDetails.UserDetailsAndOperation();  break;
 
+                case 4:
+                    System.out.println("                   ");
+                     ;break;
                 default:
 
 
             }
 
-            System.out.println("If you want to continue press 1/0");
+            System.out.println("If you want to see types of service or user details press 1/0");
             choice=sc.nextInt();
         }while(choice==1);
     }

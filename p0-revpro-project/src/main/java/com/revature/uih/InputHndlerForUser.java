@@ -86,6 +86,7 @@ public class InputHndlerForUser {
 
     public void getDetailsForLogin() {
 
+        int choic=0;
         do {
             System.out.println("====================== Login Here ================");
             System.out.println("                                                  ");
@@ -107,7 +108,11 @@ public class InputHndlerForUser {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        }while(true);
+
+            System.out.println("Wnat to continue press -1");
+            choic= sc.nextInt();
+            sc.nextLine();
+        }while(choic==1);
     }
 
 
