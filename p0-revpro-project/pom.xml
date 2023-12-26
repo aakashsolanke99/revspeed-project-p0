@@ -90,13 +90,13 @@
                             <rules>
                                 <rule>
                                     <element>PACKAGE</element>
-                                    <!--                                    <limits>-->
-                                    <!--                                        <limit>-->
-                                    <!--                                            <counter>LINE</counter>-->
-                                    <!--                                            <value>COVEREDRATIO</value>-->
-                                    <!--                                            <minimum>0.8</minimum>-->
-                                    <!--                                        </limit>-->
-                                    <!--                                    </limits>-->
+                                    <!--<limits>-->
+                                    <!--<limit>-->
+                                    <!--<counter>LINE</counter>-->
+                                    <!--<value>COVEREDRATIO</value>-->
+                                    <!--<minimum>0.8</minimum>-->
+                                    <!--</limit>-->
+                                    <!--</limits>-->
                                 </rule>
                             </rules>
                         </configuration>

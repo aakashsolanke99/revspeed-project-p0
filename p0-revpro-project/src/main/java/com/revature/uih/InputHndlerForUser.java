@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 public class InputHndlerForUser {
 
     UserDaoImple userDaoImple=new UserDaoImple();
-
+    ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
     Scanner sc=new Scanner(System.in);
     public void getUserDetailsForRegistration() throws SQLException {
         int reg=0;
@@ -37,24 +37,11 @@ public class InputHndlerForUser {
             System.out.print("Enter Your PassWord :- ");
 
             String password = sc.nextLine();
-            Boolean isPasswordPresent = userDaoImple.passwordExists(password);
+//            Boolean isPasswordPresent = userDaoImple.passwordExists(password);
             if (!isValidPassword(password)) {
                 System.out.println("Invalid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.");
                 return; // Exit the program or handle the error as needed
             }
-            if( isPasswordPresent){
-                System.out.println("Password Already Exist Use another password");
-                return;
-            }
-//            Console console = System.console();
-//            String password="";
-//            if (console!= null) {
-//                char[] passwordArray = console.readPassword("Enter your password: ");
-//                password = new String(passwordArray);
-//                System.exit(1);
-//            }else{
-//                System.out.println("Console is not available. Password masking might not work.");
-//            }
 
 
             System.out.print("Enter your Phone Number :- ");
@@ -72,7 +59,7 @@ public class InputHndlerForUser {
             System.out.println(user.toString());
             userDaoImple.registorDao(user);
 
-            System.out.print("If you want to continue press - 1/0");
+            System.out.print("If you want to continue Registration press - 1 or any key");
 
             reg=sc.nextInt();
             sc.nextLine();
@@ -84,7 +71,7 @@ public class InputHndlerForUser {
 
 
 
-    public void getDetailsForLogin() {
+    public void getDetailsForLogin() throws SQLException {
 
         int choic=0;
         do {
@@ -96,20 +83,35 @@ public class InputHndlerForUser {
                 System.out.println("Wrong Email Please provide Correct Email.");
                 return; // Exit the program or handle the error as needed
             }
-            System.out.print("Enter Password :- ");
-            String password=sc.nextLine();
-            if (!isValidPassword(password)) {
-                System.out.println("Wrong password please provide wrong password");
-                return; // Exit the program or handle the error as needed
+//            System.out.print("Enter Password :- ");
+//            String password=sc.nextLine();
+//            if (!isValidPassword(password)) {
+//                System.out.println("Wrong password please provide correct password");
+//
+//            }
+            boolean validPassword = false;
+            String password = "";
+
+            while (!validPassword) {
+                System.out.print("Enter Password: ");
+                password = sc.nextLine();
+
+                if (isValidPassword(password)) {
+                    validPassword = true;
+                } else {
+                    System.out.println("Wrong password. Please provide a correct password.");
+                }
             }
+
 
             try {
                 userDaoImple.loginDao(email,password);
+//                forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
-            System.out.println("Wnat to continue press -1");
+            forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
+            System.out.println("want to login press 1 otherwise any key");
             choic= sc.nextInt();
             sc.nextLine();
         }while(choic==1);

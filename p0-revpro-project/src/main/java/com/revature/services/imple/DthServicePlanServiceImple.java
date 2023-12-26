@@ -4,6 +4,7 @@ import com.revature.dao.imple.DthServiceDaoImple;
 import com.revature.services.DthServicePlanService;
 
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class DthServicePlanServiceImple implements DthServicePlanService {
     DthServiceDaoImple dthServiceDaoImple=new DthServiceDaoImple();
@@ -12,8 +13,18 @@ public class DthServicePlanServiceImple implements DthServicePlanService {
         dthServiceDaoImple.getDthPlansBasedOnMQEDao(str);
     }
 
+//    @Override
+//    public void purchasedDthPlansService() throws SQLException {
+//        dthServiceDaoImple.purchasedDthPlans();
+//    }
+
     @Override
-    public void purchasedDthPlansService() throws SQLException {
-        dthServiceDaoImple.purchasedDthPlans();
+    public void addDthPlanToUserService(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, LocalDate endDate) {
+        dthServiceDaoImple.purchasedDthPlansOraddPlanToUser(userId,broadbandPlanId,dthPlanId,startDate,endDate);
+    }
+
+    @Override
+    public String isWhichTypeOfPlan(int id) throws SQLException {
+        return dthServiceDaoImple.isWhichTypeOfPlan( id);
     }
 }

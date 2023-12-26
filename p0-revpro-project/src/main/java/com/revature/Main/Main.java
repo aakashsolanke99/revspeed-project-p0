@@ -14,6 +14,7 @@ public class Main {
         UserServiceImple userServiceImple=new UserServiceImple();
         Scanner sc=new Scanner(System.in);
         int choice=0;
+        int check=0;
         do{
             System.out.println("==================================================");
             System.out.println("                  Wellcome To RevSpeed            ");
@@ -42,7 +43,9 @@ public class Main {
 
 
             }
-        }while(true);
+            System.out.println("Do you want to continue with the application press -1 Otherwise any key");
+            check=sc.nextInt();
+        }while(check==1);
 
 
     }

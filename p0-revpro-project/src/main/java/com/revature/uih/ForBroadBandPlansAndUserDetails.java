@@ -13,11 +13,12 @@ public class ForBroadBandPlansAndUserDetails {
         do{
 
             System.out.println("============= Types Of Service ============ ");
+            System.out.println();
             System.out.println("1 - BroadBand Service ");
             System.out.println("2 - Dth Service");
             System.out.println("3 - See user Details");
             System.out.println("4 - Log out");
-            System.out.println("Enter Yours choice");
+            System.out.print("Enter Yours choice :- ");
             Scanner sc=new Scanner(System.in);
             int serviceId=sc.nextInt();
             sc.nextLine();
@@ -33,14 +34,16 @@ public class ForBroadBandPlansAndUserDetails {
                     ihShowUserDetails.UserDetailsAndOperation();  break;
 
                 case 4:
+                    System.exit(0);
                     System.out.println("                   ");
                      ;break;
                 default:
+                    System.out.println("Invalid input");break;
 
 
             }
 
-            System.out.println("If you want to see types of service or user details press 1/0");
+            System.out.print("If you want to see types of service or user details press- 1 otherwise any key :- ");
             choice=sc.nextInt();
         }while(choice==1);
     }

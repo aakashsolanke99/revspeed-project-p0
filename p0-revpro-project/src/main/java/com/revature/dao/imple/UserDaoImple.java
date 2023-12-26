@@ -42,7 +42,7 @@ public class UserDaoImple implements UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        connection.close();
+//        connection.close();
     }
 
         @Override
@@ -63,13 +63,14 @@ public class UserDaoImple implements UserDao {
                         String userPassword = resultSet.getString("pass_word");
 
                         if (userEmail.equals(email) && userPassword.equals(password)) {
+                            out.println();
                             System.out.println("login successesful");
+                            System.out.println();
                             loginId= resultSet.getInt(1);
                             forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
 
-                            return;
                         }else{
-                            System.out.println("PassWord Does not match/ Wrong PassWWORD");
+                            System.out.println("PassWord Does not match / Wrong Password");
                         }
                     }
                 }

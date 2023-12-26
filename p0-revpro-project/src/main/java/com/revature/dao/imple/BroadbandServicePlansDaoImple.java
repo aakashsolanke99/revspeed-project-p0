@@ -108,9 +108,11 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
 
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected > 0) {
-                    System.out.println("Service plan added successfully for user " + userId);
+                    System.out.println("BroadBand Service plan added successfully for user " + userId);
+                    System.out.println();
                 } else {
                     System.out.println("Failed to add service plan for user " + userId);
+                    System.out.println();
                 }
             }
         } catch (SQLException e) {

@@ -1,6 +1,6 @@
-create database revpro;
-drop database revpro;
-use revpro ;
+create database revpro2;
+drop database revpro2;
+use revpro2 ;
 
 Drop table Users;
 create table Users(
@@ -13,8 +13,8 @@ create table Users(
      address varchar(50)
      );
 
-insert into Users values(1,"Aakash","solanke","email","Aakash@123",9325529741,"sunder nager");
-insert into Users values(2,"swaraj","solanke","swaraj@gmail","swaraj@123",9325529741,"sunder nager");
+insert into Users values(1,"Aakash","solanke","Aakash@gmail.com","Aakash@123",9325529741,"sunder nager");
+insert into Users values(2,"swaraj","solanke","swaraj@gmail","Swaraj@123",9325529741,"sunder nager");
 select * from users;
 drop table service;
 create table service(
@@ -29,7 +29,7 @@ select * from service;
 
 Drop table Broadband_serice_plan;
 create table Broadband_serice_plan(
-      br_sr_pl_id int primary key ,
+      br_sr_pl_id int primary key auto_increment,
       plan  enum("MONTHOLY","QUATERLY","YEARLY"), 
       Plan_details varchar(30),
       price int,
@@ -55,7 +55,7 @@ SELECT * FROM Broadband_serice_plan;
 
 drop table ott_platform;
 create table ott_platform ( 
-    ott_pl_id int primary key,
+    ott_pl_id int primary key auto_increment,
 	ott_p_name varchar(100)
 );
 insert into ott_platform values(
@@ -109,94 +109,86 @@ WHERE
 
 ---------------------------- DTH --------------
 
-DROP TABLE Dth_service;
-CREATE TABLE DTH_service (
-    dth_sr_id INT PRIMARY KEY,
-    service_id INT,
-    dth_service_plans VARCHAR(50) UNIQUE,
-    FOREIGN KEY (service_id) REFERENCES service(service_id)
-);
+-- DROP TABLE Dth_service;
+-- CREATE TABLE DTH_service (
+--     dth_sr_id INT PRIMARY KEY auto_increment,
+--     service_id INT,
+--     dth_service_plans VARCHAR(50) UNIQUE,
+--     FOREIGN KEY (service_id) REFERENCES service(service_id)
+-- );
  
-INSERT INTO Dth_service (dth_sr_id, service_id, dth_service_plans) VALUES 
-(1, 2, 'monthly'), 
-(2, 2, 'quaterly'), 
-(3, 2, 'yearly');
-SELECT * FROM Dth_service;	
+-- INSERT INTO Dth_service (dth_sr_id, service_id, dth_service_plans) VALUES 
+-- (1, 2, 'monthly'), 
+-- (2, 2, 'quaterly'), 
+-- (3, 2, 'yearly');
+-- SELECT * FROM Dth_service;	
  
 DROP TABLE Dth_service_plans;
 CREATE TABLE Dth_service_plans (
-    dth_sr_pl_id INT PRIMARY KEY,
-    dth_sr_id INT,
+    dth_sr_pl_id INT PRIMARY KEY auto_increment,
+   --  dth_sr_id INT,-- 
+    plan  enum("MONTHOLY","QUATERLY"), 
     language VARCHAR(25),
     channel_category VARCHAR(25),
     price DECIMAL(10, 2),
-    FOREIGN KEY (dth_sr_id) REFERENCES Dth_service(dth_sr_id)
+     service_id int,
+	dth_chnl_dt_id int,
+	foreign key(service_id) references service(service_id),
+    foreign key(dth_chnl_dt_id) references DTH_channel_details(dth_chnl_dt_id)
+   
 );
+select * from Dth_service_plans;
+INSERT INTO Dth_service_plans ( plan, language, channel_category, price,service_id,dth_chnl_dt_id) VALUES
+( "MONTHOLY", 'hindi', 'entertainment', 50,2,1),
+( "MONTHOLY", 'hindi', 'sports', 50,2,2),
+("MONTHOLY", 'hindi', 'news', 50,2,3);
+
+ INSERT INTO Dth_service_plans ( plan, language, channel_category, price,service_id,dth_chnl_dt_id) VALUES
+( "QUATERLY", 'hindi', 'entertainment', 50,2,1),
+( "QUATERLY", 'hindi', 'sports', 50,2,2),
+("QUATERLY", 'hindi', 'news', 50,2,3);
+
+
+
+ -- Insert data into DTH_channels (marathi channels)
+INSERT INTO Dth_service_plans ( plan, language, channel_category, price,service_id,dth_chnl_dt_id) VALUES
+("MONTHOLY", 'marathi', 'entertainment', 60,2,1),
+("MONTHOLY", 'marathi', 'sports', 60,2,2),
+("MONTHOLY", 'marathi', 'news', 60,2,3);
+
+INSERT INTO Dth_service_plans ( plan, language, channel_category, price,service_id,dth_chnl_dt_id) VALUES
+("QUATERLY", 'marathi', 'entertainment', 60,2,1),
+("QUATERLY", 'marathi', 'sports', 60,2,2),
+("QUATERLY", 'marathi', 'news', 60,2,3);
+
+
+select * from Dth_service_plans;
+
  
--- Insert data into DTH_channels (Hindi channels)
-INSERT INTO Dth_service_plans (dth_sr_pl_id, dth_sr_id, language, channel_category, price) VALUES
-(1, 2, 'hindi', 'entertainment', 50),
-(2, 2, 'hindi', 'sports', 50),
-(3, 2, 'hindi', 'news', 50);
- 
--- Insert data into DTH_channels (Tamil channels)
-INSERT INTO Dth_service_plans (dth_sr_pl_id, dth_sr_id, language, channel_category, price) VALUES
-(4, 2, 'marathi', 'entertainment', 60),
-(5, 2, 'marathi', 'sports', 60),
-(6, 2, 'marathi', 'news', 60);
- 
+
 -- Create DTH_channel_details table
 DROP TABLE DTH_channel_details;
 CREATE TABLE DTH_channel_details (
-    dth_chnl_dt_id INT PRIMARY KEY,
-    dth_chnl_id INT,
-    channel_name VARCHAR(50),
-    price DECIMAL(10, 2),
-    FOREIGN KEY (dth_chnl_id) REFERENCES Dth_service_plans(dth_sr_pl_id)
+    dth_chnl_dt_id INT PRIMARY KEY auto_increment,
+    channel_name VARCHAR(100)
 );
  
 -- Insert data into DTH_channel_details (Hindi entertainment channels)
-INSERT INTO DTH_channel_details VALUES
-(1, 1, 'Hindi_Entertainment_1', 5),
-(2, 1, 'Hindi_Entertainment_2', 5),
-(3, 1, 'Hindi_Entertainment_3', 5),
-(4, 1, 'Hindi_Entertainment_4', 5);
- 
--- Insert data into DTH_channel_details (Hindi sports channels)
-INSERT INTO DTH_channel_details VALUES
-(5, 2, 'Hindi_Sports_1', 8),
-(6, 2, 'Hindi_Sports_2', 8),
-(7, 2, 'Hindi_Sports_3', 8);
- 
--- Insert data into DTH_channel_details (Hindi news channels)
-INSERT INTO DTH_channel_details VALUES
-(8, 3, 'Hindi_News_1', 3),
-(9, 3, 'Hindi_News_2', 3);
- 
--- Insert data into DTH_channel_details (Tamil entertainment channels)
-INSERT INTO DTH_channel_details VALUES
-(10, 4, 'Marathi_Entertainment_1', 4),
-(11, 4, 'Marathi_Entertainment_2', 4);
- 
--- Insert data into DTH_channel_details (Tamil sports channels)
-INSERT INTO DTH_channel_details VALUES
-(12, 5, 'Marathi_Sports_1', 6),
-(13, 5, 'Marathi_Sports_2', 6),
-(14, 5, 'Marathi_Sports_3', 6);
- 
--- Insert data into DTH_channel_details (Tamil news channels)
-INSERT INTO DTH_channel_details VALUES
-(15, 6, 'Marathi_News_1', 2),
-(16, 6, 'Marathi_News_2', 2);
- 
- 
+INSERT INTO DTH_channel_details(channel_name) VALUES
+(  'chanal-1.chanal,2,chanal-3'),
+(  'chanal-1.chanal,2,chanal-3,chanal-4,chanal-5'),
+('chanal-1.chanal,2,chanal-3,chanal-4,chanal-5,chanal-6,chanal-7');
+
 
  
+
+select * from dth_channel_details;
+
 
  
  drop table user_service_link;
 create table user_service_link(
-      user_ser_lin_id int primary key,
+      user_ser_lin_id int primary key auto_increment,
       br_sr_pl_id int,
 	  dth_sr_pl_id INT,
       user_id int ,
@@ -219,41 +211,17 @@ VALUES(4, 4, 3, 2, '2022-11-03', '2022-12-02', 1);
 select * from user_service_link;
 
 
-I
+
  
 select * from User_Service_Link;
  
 -- ALL GET QUERIES
- 
--- Querry to get user_name, phone_number, address, email_id, subscription_plan, subscription_start_date, subscription_end_date of perticular user
-SELECT
-    U.name AS user_name,
-    U.phone_number,
-    U.address,
-    U.email_id,
-    BSLD.plan_name AS subscription_plan,
-    USL.subscription_start_date,
-    USL.subscription_end_date
-FROM
-    User AS U
-LEFT JOIN User_Service_Link AS USL ON U.id = USL.user_id
-LEFT JOIN Broadband_service_plans_details AS BSLD ON USL.br_sr_dt_id = BSLD.br_sr_pl_dt_id
-WHERE U.id = 1;
- 
- 
- 
--- Querry to get OTT platform of perticular user
-SELECT OP.platform_name
-FROM User_Service_Link USL
-JOIN Broadband_service_plans_details BSLD ON USL.br_sr_dt_id = BSLD.br_sr_pl_dt_id
-JOIN Broadband_OTT_Mapping BOM ON BSLD.br_sr_id = BOM.br_sr_id
-JOIN OTT_platform OP ON BOM.ott_platform_id = OP.ott_platform_id
-WHERE USL.user_id = 1;
- 
- 
- 
  -----------  query for all plans details ------------ 
- SELECT
+ 
+ delimiter //
+ create procedure getAllPlansDetails()
+ begin
+  SELECT
     bsp.br_sr_pl_id AS broadband_plan_id,
     bsp.plan AS broadband_plan,
     bsp.Plan_details AS broadband_plan_details,
@@ -269,6 +237,88 @@ JOIN
 JOIN
     ott_platform op ON bsp.ott_pl_id = op.ott_pl_id;
 
+end //
+delimiter ;
  
+ delimiter //
+ create procedure GetPlansByMonthQuaterlyYearly(IN str varchar(20))
+ begin
+  SELECT
+    bsp.br_sr_pl_id AS broadband_plan_id,
+    bsp.plan AS broadband_plan,
+    bsp.Plan_details AS broadband_plan_details,
+    bsp.price AS broadband_price,
+--     s.service_id AS service_id,
+    s.service_name AS service_name,
+   --  op.ott_pl_id AS ott_platform_id,
+   ott_p_name
+FROM
+    Broadband_serice_plan bsp
+JOIN
+    service s ON bsp.service_id = s.service_id
+JOIN
+    ott_platform op ON bsp.ott_pl_id = op.ott_pl_id
+WHERE bsp.plan  = str;
+
+end //
+delimiter ;
  
+ call GetPlansByMonthQuaterlyYearly("yearly");
  
+ use revpro;
+
+SELECT
+    Dth_service.dth_service_plans,
+    Dth_service_plans.language,
+    Dth_service_plans.channel_category,
+    DTH_channel_details.channel_name,
+    DTH_channel_details.price
+FROM
+    Dth_service
+JOIN
+    Dth_service_plans ON Dth_service.dth_sr_id = Dth_service_plans.dth_sr_id
+JOIN
+    DTH_channel_details ON Dth_service_plans.dth_sr_pl_id = DTH_channel_details.dth_chnl_id
+JOIN
+    user_service_link ON Dth_service_plans.dth_sr_id = user_service_link.dth_sr_pl_id
+WHERE
+    user_service_link.is_active = 1;
+    
+    
+    
+ 
+                    
+                    
+                    
+                    
+                    
+---------------------------------------------------------
+
+-- Retrieve monthly plans and associated DTH channels
+
+
+drop procedure getPlansBasedOnMQ;
+delimiter //
+create procedure getPlansBasedOnMQ(IN str varchar(20))
+begin 
+SELECT
+    dsp.dth_sr_pl_id,
+    dsp.plan,
+    dsp.language,
+    dsp.channel_category,
+    dsp.price,
+    dcd.channel_name
+FROM
+    Dth_service_plans dsp
+JOIN
+    DTH_channel_details dcd ON dsp.dth_chnl_dt_id = dcd.dth_chnl_dt_id
+WHERE
+    dsp.plan = str;
+end//
+delimiter ;
+
+call getPlansBasedOnMQ("montholy");
+
+
+
+

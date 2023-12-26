@@ -28,11 +28,12 @@ public class IhShowUserDetails {
         User user1= broadbandServicePlansDaoImple.getDetails(userId);
 
 
-        System.out.println("First Name :- "+user1.getFirstName());
-        System.out.println("Last Name :- "+user1.getLastName());
-        System.out.println("Email :- "+user1.getEmail());
-        System.out.println("Phone Number :- "+user1.getPhoneNumber());
-        System.out.println("Address :- "+user1.getAddress());
+        System.out.println("First Name :-  "+user1.getFirstName());
+        System.out.println("Last Name :-   "+user1.getLastName());
+        System.out.println("Email :-       "+user1.getEmail());
+        System.out.println("Phone Number:- "+user1.getPhoneNumber());
+        System.out.println("Address :-     "+user1.getAddress());
+        System.out.println("======================================");
         System.out.println("                                         ");
 
 
@@ -67,14 +68,35 @@ public class IhShowUserDetails {
 
    static public Boolean changePassword(String oldPass,int id) throws SQLException {
 
-       System.out.println("Enter old PassWord");
+       System.out.print("Enter Your old PassWord :- ");
        String oldPasswordForCheck=sc.nextLine();
        if(oldPasswordForCheck.equals(oldPass)){
-           System.out.println("Enter New PassWord");
+           System.out.println("Enter New PassWord :- ");
            String newPass=sc.nextLine();
-           userServiceImple.changePassWordService(newPass,id);
+           boolean validPassword = false;
+           String password = "";
+
+           while (!validPassword) {
+               System.out.print("Enter new Password again :- ");
+               password = sc.nextLine();
+
+               if (isValidPassword(password)) {
+                   validPassword = true;
+                   userServiceImple.changePassWordService(newPass,id);
+               } else {
+                   System.out.println("Wrong password. Please provide a correct password.");
+               }
+           }
+
+       }else{
+           out.println("old password does not match ");
        }
         return true;
+    }
+
+    static boolean isValidPassword(String password) {
+        // Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit
+        return password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*[a-z].*") && password.matches(".*\\d.*");
     }
 
 

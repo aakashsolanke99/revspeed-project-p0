@@ -4,6 +4,7 @@ import com.revature.config.DbConnection;
 import com.revature.dao.DthServiceDao;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class DthServiceDaoImple implements DthServiceDao {
@@ -11,73 +12,62 @@ public class DthServiceDaoImple implements DthServiceDao {
 
     @Override
     public void getDthPlansBasedOnMQEDao(String str) throws SQLException {
-        String query="{CALL getDthPlanBasedOnMQE(?)}";
+        String query="{CALL getPlansBasedOnMQ(?)}";
         CallableStatement cs=connection.prepareCall(query);
         cs.setString(1,str);
          ResultSet rs= cs.executeQuery();
-        System.out.println("Dth plans\tLanguage\tchannel category\tname\tprice");
-        while (rs.next()){
-            System.out.println(rs.getString(1)+"  \t"+rs.getString(2)+"  \t"+rs.getString(3)+"\t"+rs.getString(4)+"\t"+rs.getInt(5));
+        System.out.println("======================================================= DTH Plans =========================================================");
+        System.out.println("                                          ");
+        System.out.println("==============================================================================================================================");
+        System.out.printf("%10s %10s %10s %19s %16s %32s","plan id","Plan Type","Language","channel category","Amount","chanel names");
+        System.out.println();
+        System.out.println("==============================================================================================================================");
 
+//        System.out.println("plan Id\tDth plans\tLanguage\tchannel category\tprice\tname");
+        while (rs.next()){
+            System.out.printf("%10s %10s %10s %18s %15s %38s",rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5),rs.getString(6));
+            System.out.println();
         }
     }
 
 
-    public void purchasedDthPlans() throws SQLException{
+     @Override
+        public void purchasedDthPlansOraddPlanToUser(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, java.time.LocalDate endDate) {
 
-        Scanner scanner = new Scanner(System.in);
+        try {
+            String query = "INSERT INTO user_service_link (user_id, br_sr_pl_id, dth_sr_pl_id, subscription_start_date, subscription_end_date,is_active) VALUES (?, ?, ?, ?, ?,?)";
+            try (PreparedStatement ps = connection.prepareStatement(query)) {
+                ps.setInt(1, userId);
+                ps.setInt(2, broadbandPlanId);
+                ps.setInt(3, dthPlanId);
+                ps.setDate(4,  Date.valueOf(startDate));
+                ps.setDate(5,  Date.valueOf(endDate));
+                ps.setInt(6,1);
 
-        System.out.print("Enter plan type (e.g., monthly, quarterly, yearly): ");
-        String planType = scanner.nextLine();
-
-        System.out.print("Enter language (e.g., hindi): ");
-        String language = scanner.nextLine();
-
-        System.out.print("Enter channel category (e.g., entertainment, sports): ");
-        String channelCategory = scanner.nextLine();
-
-        // Create a parameterized SQL query
-        String sql = "SELECT ds.dth_sr_id, ds.service_id, ds.dth_service_plans, " +
-                "dsp.dth_sr_pl_id, dsp.language, dsp.channel_category, dsp.price, " +
-                "dcd.dth_chnl_dt_id, dcd.channel_name, dcd.price " +
-                "FROM DTH_service AS ds " +
-                "JOIN DTH_service_plans AS dsp ON ds.dth_sr_id = dsp.dth_sr_id " +
-                "JOIN DTH_channel_details AS dcd ON dsp.dth_sr_pl_id = dcd.dth_chnl_id " +
-                "WHERE ds.dth_service_plans = ? AND dsp.language = ? AND dsp.channel_category = ?";
-
-        // Prepare the statement
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            // Set parameters
-            preparedStatement.setString(1, planType);
-            preparedStatement.setString(2, language);
-            preparedStatement.setString(3, channelCategory);
-
-            // Execute the query
-            double totalAmount = 0.0;
-
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                // Process the result set
-                while (resultSet.next()) {
-                    // Retrieve and print the data
-                    int dthSrId = resultSet.getInt("dth_sr_id");
-                    String channelName = resultSet.getString("channel_name");
-                    double channelPrice = resultSet.getDouble("price");
-
-                    System.out.println("DTH Service ID: " + dthSrId);
-                    System.out.println("Channel Name: " + channelName);
-                    System.out.println("Channel Price: " + channelPrice);
-
-                    // Accumulate the total amount
-                    totalAmount += channelPrice;
+                int rowsAffected = ps.executeUpdate();
+                if (rowsAffected > 0) {
+                    System.out.println("Dth plan added successfully for user " + userId);
+                } else {
+                    System.out.println("Failed to add Dth plan for user " + userId);
                 }
             }
-
-            // Print the total amount
-            System.out.println("Total Amount: " + totalAmount);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-        // Close the connection
-        connection.close();
-    } 
+    }
+
+    @Override
+    public String isWhichTypeOfPlan(int id) throws SQLException {
+        String plan="";
+        String query="select plan from dth_service_plans where dth_sr_pl_id=?";
+        PreparedStatement ps=connection.prepareStatement(query);
+        ps.setInt(1,id);
+        ResultSet rs=ps.executeQuery();
+        while (rs.next()){
+            plan=rs.getString(1);
+        }
+        return plan;
+    }
 
 }
