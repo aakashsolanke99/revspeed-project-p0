@@ -1,9 +1,12 @@
 package com.revature.dao.imple;
 
+import com.revature.Main.Main;
 import com.revature.config.DbConnection;
 import com.revature.dao.UserDao;
 import com.revature.uih.ForBroadBandPlansAndUserDetails;
 import com.revature.util.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +17,7 @@ import java.util.Scanner;
 import static java.lang.System.out;
 
 public class UserDaoImple implements UserDao {
+    public static final Logger logger= LoggerFactory.getLogger(Main.class);
 
     ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
     static Scanner sc=new Scanner(System.in);
@@ -35,11 +39,17 @@ public class UserDaoImple implements UserDao {
             ps.setString(5,user.getPhoneNumber());
             ps.setString(6,user.getAddress());
 
-            ps.executeUpdate();
-            System.out.println("Registeration successful");
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                logger.info("Registration successful for user with email: {}", user.getEmail());
+            } else {
+                logger.warn("No rows affected during registration for user with email: {}", user.getEmail());
+            }
 
+            out.println("registration successful");
 
         } catch (SQLException e) {
+            logger.error("Error during user registration", e);
             throw new RuntimeException(e);
         }
 //        connection.close();
@@ -64,18 +74,22 @@ public class UserDaoImple implements UserDao {
 
                         if (userEmail.equals(email) && userPassword.equals(password)) {
                             out.println();
-                            System.out.println("login successesful");
+                            System.out.println("login successful");
+                            logger.info("login successful for email"+userEmail);
                             System.out.println();
                             loginId= resultSet.getInt(1);
                             forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
 
                         }else{
                             System.out.println("PassWord Does not match / Wrong Password");
+                            logger.warn("PassWord Does not match / Wrong Password");
+
                         }
                     }
                 }
 
             }catch(SQLException E){
+            logger.error("Error during user logins", E);
                 E.printStackTrace();
             }
     }
@@ -88,6 +102,7 @@ public class UserDaoImple implements UserDao {
         ps.setInt(2,id);
 //        ResultSet rs= ps.executeQuery();
         System.out.println("password update Successfully");
+        logger.info("password update Successfully for id :- "+id);
 
     }
 
@@ -120,6 +135,7 @@ public class UserDaoImple implements UserDao {
                     ps.setInt(2,id);
                     ps.executeUpdate();
                     out.println("First Name Update Successful");
+                    logger.info("First Name Update Successful for id:- "+id);
                     ;break;
 
                 case 2:
@@ -131,6 +147,7 @@ public class UserDaoImple implements UserDao {
                     ps1.setInt(2,id);
                     ps1.executeUpdate();
                     out.println("Last name Update Successful");
+                    logger.info("Last Name Update Successful for id:- "+id);
                     ;break;
 
                 case 3:
@@ -142,6 +159,7 @@ public class UserDaoImple implements UserDao {
                     ps3.setInt(2,id);
                     ps3.executeUpdate();
                     out.println("Email Update Successful");
+                    logger.info("Email Update Successful for id:- "+id);
                     ;break;
 
                 case 4:
@@ -152,26 +170,31 @@ public class UserDaoImple implements UserDao {
                     ps4.setString(1,phoneNumber);
                     ps4.setInt(2,id);
                     ps4.executeUpdate();
-                    out.println("Phone no Update Successful")
+                    out.println("Phone no Update Successful");
+                    logger.info("Phone No Update Successful for id:- "+id);
                     ;break;
 
                 case 5:
-                    String query5="Update users set phone_no=? where user_id=?";
-                    out.print("Enter The phone number which you want to change :- ");
+                    String query5="Update users set address=? where user_id=?";
+                    out.print("Enter The new Address which you want to change :- ");
                     String address= sc.nextLine();
                     PreparedStatement ps5=connection.prepareStatement(query5);
                     ps5.setString(1,address);
                     ps5.setInt(2,id);
                     ps5.executeUpdate();
-                    out.println("Adress Update Successful");
+                    out.println("Address Update Successful");
+                    logger.info("First Name Update Successful for id:- "+id);
                     break;
 
                 default :
                     out.println("Number not found");
+                    logger.warn("Number not found");
 
             }
 
             out.println("if you want to update more press 1 otherwise any key");
+            logger.info("if you want to update more press 1 otherwise any key");
+
             check=sc.nextInt();
             sc.nextLine();
         }while(check==1);

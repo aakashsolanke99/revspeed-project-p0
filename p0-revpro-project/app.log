@@ -1,0 +1,9 @@
+2023-12-27 00:10:16,000 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:13:34,578 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:14:06,361 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:20:10,610 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:23:24,710 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:25:56,372 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:26:22,954 INFO [main] c.r.M.Main [UserDaoImple.java:44] -- Registration successful for user with email: mrunal@gmail.com
+2023-12-27 00:31:15,075 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 00:31:25,983 INFO [main] c.r.M.Main [UserDaoImple.java:78] -- login successesful

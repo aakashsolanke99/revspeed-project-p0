@@ -110,7 +110,7 @@ public class InputHndlerForUser {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-            forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
+//            forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
             System.out.println("want to login press 1 otherwise any key");
             choic= sc.nextInt();
             sc.nextLine();
