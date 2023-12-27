@@ -1,5 +1,6 @@
 package com.revature.dao.imple;
 
+import com.revature.Main.GEmailSender;
 import com.revature.config.DbConnection;
 import com.revature.dao.DthServiceDao;
 
@@ -9,7 +10,8 @@ import java.util.Scanner;
 
 public class DthServiceDaoImple implements DthServiceDao {
     Connection connection = DbConnection.getConnection();
-
+    GEmailSender gEmailSender=new GEmailSender();
+    static  String from="aakashsolanke99@gmail.com";
     @Override
     public void getDthPlansBasedOnMQEDao(String str) throws SQLException {
         String query="{CALL getPlansBasedOnMQ(?)}";
@@ -44,8 +46,13 @@ public class DthServiceDaoImple implements DthServiceDao {
                 ps.setDate(5,  Date.valueOf(endDate));
                 ps.setInt(6,1);
 
+                String subject="DTH Plan Purchase Confirmation";
+                String text="We are excited to inform you that your recent purchase of a DTH plan on RevSpeed has been successfully processed. Thank you for choosing our services!";
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected > 0) {
+                    String email=UserDaoImple.userEmailId;
+                    gEmailSender.sendEmail(email,from,subject,text);
+
                     System.out.println("Dth plan added successfully for user " + userId);
                 } else {
                     System.out.println("Failed to add Dth plan for user " + userId);

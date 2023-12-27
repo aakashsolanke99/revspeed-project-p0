@@ -1,5 +1,6 @@
 package com.revature.dao.imple;
 
+import com.revature.Main.GEmailSender;
 import com.revature.config.DbConnection;
 import com.revature.dao.BroadbandServicePlansDao;
 import com.revature.util.BroadBandServicePlans;
@@ -11,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
-
+    GEmailSender gEmailSender=new GEmailSender();
     static Connection connection= DbConnection.getConnection();
+    static  String from="aakashsolanke99@gmail.com";
     @Override
     public List<BroadBandServicePlans> getAllPlans() {
         List<BroadBandServicePlans> broadBandServicePlans=new ArrayList<>();
@@ -106,8 +108,12 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
                 ps.setDate(5,  Date.valueOf(endDate));
                 ps.setInt(6,1);
 
+                String subject="Broad Band Plan Purchase Confirmation";
+                String text="We are excited to inform you that your recent purchase of a BroadBand plan on RevSpeed has been successfully processed. Thank you for choosing our services!";
                 int rowsAffected = ps.executeUpdate();
                 if (rowsAffected > 0) {
+                    String email=UserDaoImple.userEmailId;
+                    gEmailSender.sendEmail(email,from,subject,text);
                     System.out.println("BroadBand Service plan added successfully for user " + userId);
                     System.out.println();
                 } else {

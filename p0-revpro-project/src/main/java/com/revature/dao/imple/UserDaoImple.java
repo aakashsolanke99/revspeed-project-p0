@@ -1,5 +1,6 @@
 package com.revature.dao.imple;
 
+import com.revature.Main.GEmailSender;
 import com.revature.Main.Main;
 import com.revature.config.DbConnection;
 import com.revature.dao.UserDao;
@@ -18,12 +19,15 @@ import static java.lang.System.out;
 
 public class UserDaoImple implements UserDao {
     public static final Logger logger= LoggerFactory.getLogger(Main.class);
+    GEmailSender gEmailSender=new GEmailSender();
 
     ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
     static Scanner sc=new Scanner(System.in);
 
     private static Connection connection= DbConnection.getConnection();
     public static int loginId;
+    public static String userEmailId="";
+    static  String from="aakashsolanke99@gmail.com";
     @Override
     public  void registorDao(User user) throws SQLException {
 
@@ -39,8 +43,11 @@ public class UserDaoImple implements UserDao {
             ps.setString(5,user.getPhoneNumber());
             ps.setString(6,user.getAddress());
 
+            String subject="Registration successful - Welcome to Revspeed";
+            String text="We are delighted to inform you that your registration on RevSpeed was successful! Welcome to our community.";
             int rowsAffected = ps.executeUpdate();
             if (rowsAffected > 0) {
+                gEmailSender.sendEmail(user.getEmail(),from,subject,text);
                 logger.info("Registration successful for user with email: {}", user.getEmail());
             } else {
                 logger.warn("No rows affected during registration for user with email: {}", user.getEmail());
@@ -78,6 +85,7 @@ public class UserDaoImple implements UserDao {
                             logger.info("login successful for email"+userEmail);
                             System.out.println();
                             loginId= resultSet.getInt(1);
+                            userEmailId=userEmail;
                             forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
 
                         }else{

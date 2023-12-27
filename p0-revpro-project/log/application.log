@@ -7,3 +7,10 @@
 00:26:22.954 [main] INFO  com.revature.Main.Main - Registration successful for user with email: mrunal@gmail.com
 00:31:15.075 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
 00:31:25.983 [main] INFO  com.revature.Main.Main - login successesful
+14:33:00.301 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+14:34:08.053 [main] INFO  com.revature.Main.Main - Registration successful for user with email: achoure184@gmail.com
+14:51:09.206 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+14:52:50.654 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+14:53:03.649 [main] INFO  com.revature.Main.Main - login successful for emailachoure184@gmail.com
+14:54:11.292 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+14:55:13.701 [main] INFO  com.revature.Main.Main - login successful for emailachoure184@gmail.com

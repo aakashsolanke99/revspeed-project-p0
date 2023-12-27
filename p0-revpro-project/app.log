@@ -7,3 +7,10 @@
 2023-12-27 00:26:22,954 INFO [main] c.r.M.Main [UserDaoImple.java:44] -- Registration successful for user with email: mrunal@gmail.com
 2023-12-27 00:31:15,075 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
 2023-12-27 00:31:25,983 INFO [main] c.r.M.Main [UserDaoImple.java:78] -- login successesful
+2023-12-27 14:33:00,301 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 14:34:08,053 INFO [main] c.r.M.Main [UserDaoImple.java:51] -- Registration successful for user with email: achoure184@gmail.com
+2023-12-27 14:51:09,206 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 14:52:50,654 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 14:53:03,649 INFO [main] c.r.M.Main [UserDaoImple.java:85] -- login successful for emailachoure184@gmail.com
+2023-12-27 14:54:11,292 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 14:55:13,701 INFO [main] c.r.M.Main [UserDaoImple.java:85] -- login successful for emailachoure184@gmail.com
