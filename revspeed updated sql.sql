@@ -189,25 +189,27 @@ select * from dth_channel_details;
  drop table user_service_link;
 create table user_service_link(
       user_ser_lin_id int primary key auto_increment,
-      br_sr_pl_id int,
-	  dth_sr_pl_id INT,
+      br_sr_pl_id int default 0,
+	  dth_sr_pl_id INT default 0,
       user_id int ,
       subscription_start_date DATE,
 	  subscription_end_date DATE,
-	  is_active BOOLEAN DEFAULT 1,
+	  Broad_is_active BOOLEAN DEFAULT 1,
+      Dth_is_active BOOLEAN DEFAULT 1,
       foreign key(br_sr_pl_id) references Broadband_serice_plan(br_sr_pl_id),
       foreign key(user_id) references Users(user_id),
         FOREIGN KEY (dth_sr_pl_id) REFERENCES Dth_service_plans(dth_sr_pl_id)
 );
 
-INSERT INTO user_service_link (user_ser_lin_id, br_sr_pl_id, dth_sr_pl_id, user_id, subscription_start_date, subscription_end_date, is_active)
+INSERT INTO user_service_link (user_ser_lin_id, br_sr_pl_id, dth_sr_pl_id, user_id, subscription_start_date, subscription_end_date, Broad_is_active,Dth_is_active)
 VALUES
-    (1, 1, 1, 1, '2022-04-02', '2022-05-01', 1),
-    (2, 2, 2, 2, '2022-03-01', '2022-04-01', 1),
-    (3, 3, 3, 2, '2022-11-03', '2022-12-02', 1);
+    (1, 1, 1, 1, '2022-04-02', '2022-05-01', 1,1),
+    (2, 2, 2, 2, '2022-03-01', '2022-04-01', 1,1),
+    (3, 3, 3, 2, '2022-11-03', '2022-12-02', 1,1),
+    (4, 4, 3, 2, '2022-11-03', '2022-12-02', 1,1);
     
     INSERT INTO user_service_link (user_ser_lin_id, br_sr_pl_id, dth_sr_pl_id, user_id, subscription_start_date, subscription_end_date, is_active)
-VALUES(4, 4, 3, 2, '2022-11-03', '2022-12-02', 1);
+VALUES(4, 4, 3, 2, '2022-11-03', '2022-12-02', 1,1);
 select * from user_service_link;
 
 
@@ -322,3 +324,93 @@ call getPlansBasedOnMQ("montholy");
 
 
 
+------- user service link ----
+use revpro2;
+SELECT
+    U.user_id,
+   --  U.first_name,
+   --  U.last_name,
+    S.service_name,
+    B.plan AS broadband_plan,
+    B.Plan_details AS broadband_plan_details,
+    B.price AS broadband_price,
+    subscription_start_date,
+    subscription_end_date,
+    O.ott_p_name AS ott_platform
+FROM
+    Users U
+JOIN
+    user_service_link USL ON U.user_id = USL.user_id
+JOIN
+    Broadband_serice_plan B ON USL.br_sr_pl_id = B.br_sr_pl_id
+JOIN
+    service S ON B.service_id = S.service_id
+LEFT JOIN
+    ott_platform O ON B.ott_pl_id = O.ott_pl_id
+WHERE
+    U.user_id = 2
+    AND USL.Broad_is_active = 1;
+    
+
+drop procedure getsubscribePlanForBroadBand;
+delimiter //
+create procedure getsubscribePlanForBroadBand(In Id int)
+begin
+SELECT
+    U.user_id,
+   --  U.first_name,
+   --  U.last_name,
+    S.service_name,
+    B.plan AS broadband_plan,
+    B.Plan_details AS broadband_plan_details,
+    B.price AS broadband_price,
+    subscription_start_date,
+    subscription_end_date,
+    O.ott_p_name AS ott_platform
+FROM
+    Users U
+JOIN
+    user_service_link USL ON U.user_id = USL.user_id
+JOIN
+    Broadband_serice_plan B ON USL.br_sr_pl_id = B.br_sr_pl_id
+JOIN
+    service S ON B.service_id = S.service_id
+LEFT JOIN
+    ott_platform O ON B.ott_pl_id = O.ott_pl_id
+WHERE
+  USL.Broad_is_active = 1
+   AND  U.user_id =Id;
+end //
+delimiter ;
+
+call getsubscribePlanForBroadBand(2);
+
+
+Drop procedure getsubscribePlanForDTH;
+delimiter //
+create procedure getsubscribePlanForDTH(In Id INT)
+begin
+SELECT
+    U.user_id,
+    S.service_name,
+    D.plan AS dth_plan,
+    D.language AS dth_language,
+    D.channel_category AS dth_channel_category,
+    D.price AS dth_price,
+    subscription_start_date,
+    subscription_end_date
+FROM
+    Users U
+JOIN
+    user_service_link USL ON U.user_id = USL.user_id
+JOIN
+    Dth_service_plans D ON USL.dth_sr_pl_id = D.dth_sr_pl_id
+JOIN
+    service S ON D.service_id = S.service_id
+WHERE
+  USL.Dth_is_active = 1
+    AND U.user_id = Id;
+END //
+delimiter ;
+
+call getsubscribePlanForDTH(2)

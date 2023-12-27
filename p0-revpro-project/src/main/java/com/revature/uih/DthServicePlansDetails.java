@@ -1,5 +1,6 @@
 package com.revature.uih;
 
+import com.revature.dao.imple.DthServiceDaoImple;
 import com.revature.services.imple.DthServicePlanServiceImple;
 
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 public class DthServicePlansDetails {
     Scanner sc=new Scanner(System.in);
     ShowPlans showPlans=new ShowPlans();
+    DthServiceDaoImple dthServiceDaoImple=new DthServiceDaoImple();
     DthServicePlanServiceImple dthServicePlanServiceImple=new DthServicePlanServiceImple();
     public void getAllDthPlansDetails() throws SQLException {
         int choice=0;
@@ -18,6 +20,7 @@ public class DthServicePlansDetails {
             System.out.println("Enter 1 - For Monthly Plans");
             System.out.println("Enter 2 - For Quarterly Plans");
             System.out.println("Enter 3 - For Purchased plan");
+            System.out.println("Enter 4 - For see Active Dth Plan");
             System.out.println("Enter 0 - Exit");
             System.out.print("Enter your choice :- ");
             int check=sc.nextInt();
@@ -30,6 +33,11 @@ public class DthServicePlansDetails {
                 case 3:
                     showPlans.addDthPlansToUserOrPerchesedPlan();
                     break;
+                case 4:
+                   dthServiceDaoImple.getSubscribedPlandForDTH();
+                case 0:
+                    return;
+
                 default:
                     System.out.println("Wrong input ");
             }

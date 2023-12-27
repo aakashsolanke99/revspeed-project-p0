@@ -38,7 +38,7 @@ public class IhShowUserDetails {
 
 
             int id=user1.getUserId();
-            System.out.println("1- Change Password  \t   2-Update Profile Details  \t  3-Exit");
+            System.out.println("1- Change Password  \t   2-Update Profile Details   \t  3-Exit");
             int choice=0;
             try{
                 choice=sc.nextInt();

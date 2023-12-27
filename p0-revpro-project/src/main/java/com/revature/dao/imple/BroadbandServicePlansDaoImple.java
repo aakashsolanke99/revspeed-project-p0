@@ -99,7 +99,7 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
     @Override
     public void addUserAndPlansToUserServiceLink(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, LocalDate endDate) {
         try {
-            String query = "INSERT INTO user_service_link (user_id, br_sr_pl_id, dth_sr_pl_id, subscription_start_date, subscription_end_date,is_active) VALUES (?, ?, ?, ?, ?,?)";
+            String query = "INSERT INTO user_service_link (user_id, br_sr_pl_id, dth_sr_pl_id, subscription_start_date, subscription_end_date,Broad_is_active,Dth_is_active) VALUES (?, ?, ?, ?, ?,?,?)";
             try (PreparedStatement ps = connection.prepareStatement(query)) {
                 ps.setInt(1, userId);
                 ps.setInt(2, broadbandPlanId);
@@ -107,6 +107,7 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
                 ps.setDate(4,  Date.valueOf(startDate));
                 ps.setDate(5,  Date.valueOf(endDate));
                 ps.setInt(6,1);
+                ps.setInt(7,0);
 
                 String subject="Broad Band Plan Purchase Confirmation";
                 String text="We are excited to inform you that your recent purchase of a BroadBand plan on RevSpeed has been successfully processed. Thank you for choosing our services!";
@@ -139,5 +140,50 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
         return plan;
     }
 
+    @Override
+    public void planOptOutForBroadBand() throws SQLException {
+            String sql="UPDATE user_service_link SET Broad_is_active =0  WHERE user_id = ? AND subscription_end_date <= CURDATE()";
+            PreparedStatement ps= connection.prepareStatement(sql);
+            ps.setInt(1,UserDaoImple.loginId);
+            ps.executeUpdate();
+            System.out.println("Plan opt out");
+        }
 
+    @Override
+    public void getSubscribedPlandForBroadBand() throws SQLException {
+        String query= "{ call getsubscribePlanForBroadBand(?) }";
+
+        CallableStatement ps=connection.prepareCall(query);
+        ps.setInt(1,UserDaoImple.loginId);
+        ResultSet rs= ps.executeQuery();
+
+        System.out.println(rs);
+        System.out.println("======================================================= Active Broad Band Plans =========================================================");
+        System.out.println("                                          ");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%10s %10s %15s %10s %15s %12s %20s","service Name","Plan type","Plan Details","Amoount","subscription start date","subscription end date","OTT platform");
+        System.out.println();
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println();
+        while (rs.next()){
+//            int id=rs.getInt(1);
+//            System.out.println(rs.getInt(1)+"\t"+rs.getString(2)+"\t"+rs.getString(3)+"\t"+rs.getString(4)+"\t"+rs.getInt(5)+"\t"+rs.getDate(6)+"\t"+rs.getDate(7)+"\t"+rs.getString(8));
+            System.out.printf("%10s %10s %18s %10s %15s %15s %30s",rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDate(6),rs.getDate(7),rs.getString(8));
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println();
+
+//        while (rs.next()){
+//            System.out.printf("%10s %10s %10s %18s %15s %38s %20s",rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDate(6),rs.getDate(7),rs.getString(8));
+//            System.out.println();
+//
+//        }
+
+
+
+    }
 }
+
+
+

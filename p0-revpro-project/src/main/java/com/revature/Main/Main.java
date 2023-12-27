@@ -31,24 +31,25 @@ public class Main {
             try{
                 choice= sc.nextInt();
                 sc.nextLine();
+                switch (choice){
+                    case 1:
+                        userServiceImple.register();break;
+                    case 2:
+                        userServiceImple.login();break;
+                    case 0:
+                        System.exit(0);
+                    default:
+
+
+                }
+                System.out.println("Do you want to continue with the application press -1 Otherwise any key");
+                check=sc.nextInt();
             }catch (Exception E){
                 System.out.println("Enter Integer values");
             }
 
 
-            switch (choice){
-                case 1:
-                    userServiceImple.register();break;
-                case 2:
-                    userServiceImple.login();break;
-                case 0:
-                    System.exit(0);
-                default:
 
-
-            }
-            System.out.println("Do you want to continue with the application press -1 Otherwise any key");
-            check=sc.nextInt();
         }while(check==1);
 
 

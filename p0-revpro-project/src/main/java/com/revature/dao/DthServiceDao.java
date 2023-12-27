@@ -7,4 +7,8 @@ public interface DthServiceDao {
     public void getDthPlansBasedOnMQEDao(String str) throws SQLException;
     public void purchasedDthPlansOraddPlanToUser(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, java.time.LocalDate endDate) throws SQLException;
     public String isWhichTypeOfPlan(int id) throws SQLException;
+
+    public void planOptOutForDth() throws SQLException;
+
+    public void getSubscribedPlandForDTH() throws SQLException;
 }

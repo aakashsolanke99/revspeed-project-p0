@@ -14,3 +14,126 @@
 2023-12-27 14:53:03,649 INFO [main] c.r.M.Main [UserDaoImple.java:85] -- login successful for emailachoure184@gmail.com
 2023-12-27 14:54:11,292 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
 2023-12-27 14:55:13,701 INFO [main] c.r.M.Main [UserDaoImple.java:85] -- login successful for emailachoure184@gmail.com
+2023-12-27 15:38:33,663 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 15:38:51,049 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 15:39:05,602 INFO [main] c.r.M.Main [UserDaoImple.java:86] -- login successful for emailmrunal@gmail.com
+2023-12-27 20:52:45,897 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 20:53:14,426 INFO [main] c.r.M.Main [UserDaoImple.java:86] -- login successful for emailmrunal@gmail.com
+2023-12-27 20:53:14,447 ERROR [main] c.r.M.Main [UserDaoImple.java:102] -- Error during user logins
+java.sql.SQLSyntaxErrorException: Unknown column 'is_active' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.revature.dao.imple.DthServiceDaoImple.planOptOutForAll(DthServiceDaoImple.java:86)
+	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:90)
+	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:108)
+	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
+	at com.revature.Main.Main.main(Main.java:43)
+2023-12-27 20:59:36,288 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:00:05,438 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 21:01:10,921 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:01:22,815 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailAakash@gmail.com
+2023-12-27 21:02:48,557 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:03:11,725 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:03:38,246 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:04:06,027 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:05:41,030 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:05:59,210 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:07:34,676 INFO [main] c.r.M.Main [Main.java:29] -- Example log from class com.revature.Main.Main
+2023-12-27 21:08:17,945 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:08:33,549 WARN [main] c.r.M.Main [UserDaoImple.java:97] -- PassWord Does not match / Wrong Password
+2023-12-27 21:08:53,962 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 21:09:11,011 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:00:01,226 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:00:25,334 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:04:26,861 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:04:37,864 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:08:34,625 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:08:58,132 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:10:34,243 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:10:51,985 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:14:36,983 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:14:52,217 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:17:23,520 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:17:40,495 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:19:25,669 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:19:38,802 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:23:17,565 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:23:40,673 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:23:44,374 ERROR [main] c.r.M.Main [UserDaoImple.java:104] -- Error during user logins
+java.sql.SQLException: Parameter index out of range (1 > number of parameters, which is 0).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1345)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1358)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setInt(ClientPreparedStatement.java:1536)
+	at com.revature.dao.imple.BroadbandServicePlansDaoImple.getSubscribedPlandForBroadBand(BroadbandServicePlansDaoImple.java:160)
+	at com.revature.uih.MonthlyQuaterlyYerlyPlansDetails.getAllBroadBandServicePlansMQY(MonthlyQuaterlyYerlyPlansDetails.java:42)
+	at com.revature.uih.ForBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails(ForBroadBandPlansAndUserDetails.java:28)
+	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:93)
+	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:108)
+	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
+	at com.revature.Main.Main.main(Main.java:38)
+2023-12-27 22:51:52,162 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:53:09,358 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:54:17,300 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:57:11,359 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:57:30,609 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 22:58:21,500 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 22:58:43,958 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:00:34,073 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:00:49,866 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:03:17,194 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:03:31,024 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:05:27,076 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:05:40,161 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:08:47,253 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:08:58,529 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:10:11,776 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:10:23,853 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:11:12,360 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:11:26,521 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:11:55,633 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:12:09,904 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:12:24,896 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:16:11,737 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:16:23,999 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:17:47,866 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:18:01,657 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:23:20,258 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:24:11,357 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:24:33,794 ERROR [main] c.r.M.Main [UserDaoImple.java:104] -- Error during user logins
+java.sql.SQLDataException: Cannot determine value type from string 'sports'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1431)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:830)
+	at com.revature.dao.imple.DthServiceDaoImple.getSubscribedPlandForDTH(DthServiceDaoImple.java:111)
+	at com.revature.uih.DthServicePlansDetails.getAllDthPlansDetails(DthServicePlansDetails.java:37)
+	at com.revature.uih.ForBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails(ForBroadBandPlansAndUserDetails.java:30)
+	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:93)
+	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:108)
+	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
+	at com.revature.Main.Main.main(Main.java:38)
+Caused by: com.mysql.cj.exceptions.DataConversionException: Cannot determine value type from string 'sports'
+	at com.mysql.cj.result.AbstractNumericValueFactory.createFromBytes(AbstractNumericValueFactory.java:65)
+	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeByteArray(MysqlTextValueDecoder.java:143)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:135)
+	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243)
+	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1324)
+	... 8 common frames omitted
+2023-12-27 23:29:39,217 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:29:49,810 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-27 23:30:16,397 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-27 23:30:28,023 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com

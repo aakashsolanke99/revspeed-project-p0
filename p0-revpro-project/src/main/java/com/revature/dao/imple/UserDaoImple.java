@@ -20,6 +20,8 @@ import static java.lang.System.out;
 public class UserDaoImple implements UserDao {
     public static final Logger logger= LoggerFactory.getLogger(Main.class);
     GEmailSender gEmailSender=new GEmailSender();
+    DthServiceDaoImple dthServiceDaoImple=new DthServiceDaoImple();
+    BroadbandServicePlansDaoImple broadbandServicePlansDaoImple=new BroadbandServicePlansDaoImple();
 
     ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
     static Scanner sc=new Scanner(System.in);
@@ -86,6 +88,8 @@ public class UserDaoImple implements UserDao {
                             System.out.println();
                             loginId= resultSet.getInt(1);
                             userEmailId=userEmail;
+                            dthServiceDaoImple.planOptOutForDth();
+                            broadbandServicePlansDaoImple.planOptOutForBroadBand();
                             forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
 
                         }else{
@@ -220,6 +224,7 @@ public class UserDaoImple implements UserDao {
             }
         }
     }
+
 
 
 }

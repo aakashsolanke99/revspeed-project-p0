@@ -10,6 +10,7 @@ public class MonthlyQuaterlyYerlyPlansDetails {
 
     ShowPlans showPlans=new ShowPlans();
 
+    BroadbandServicePlansDaoImple broadbandServicePlansDaoImple=new BroadbandServicePlansDaoImple();
 
     public void getAllBroadBandServicePlansMQY() throws SQLException {
         Boolean forExit=true;
@@ -17,9 +18,10 @@ public class MonthlyQuaterlyYerlyPlansDetails {
             System.out.println("================ Broad Band Plans =============");
             System.out.println("1- For All Plans ");
             System.out.println("2- For Monthly Plans ");
-            System.out.println("3- For Quaterly Plans");
+            System.out.println("3- For Quarterly Plans");
             System.out.println("4- For Yearly plans");
-            System.out.println("5- Purchase Plan");
+            System.out.println("5- Purchase a BroadBand Plan");
+            System.out.println("6 -See Ongoing BroadBand Plan");
             System.out.println("0 - For Exit");
             System.out.print("Enter your response :- ");
             int choice = sc.nextInt();
@@ -36,6 +38,8 @@ public class MonthlyQuaterlyYerlyPlansDetails {
                     showPlans.getYearlyPlans();break;
                 case 5:
                     showPlans.addBroadBandPlansToUser();break;
+                case 6:
+                    broadbandServicePlansDaoImple.getSubscribedPlandForBroadBand();break;
                 case 0:
                     forExit=false; break;
                 default:
