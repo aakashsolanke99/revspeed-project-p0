@@ -1,9 +1,15 @@
 package com.revature.uih;
 
+import com.revature.dao.imple.BroadbandServicePlansDaoImple;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ForBroadBandPlansAndUserDetails {
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
     Scanner sc = new Scanner(System.in);
     MonthlyQuaterlyYerlyPlansDetails monthlyQuaterlyYerlyPlansDetails=new MonthlyQuaterlyYerlyPlansDetails();
     IhShowUserDetails ihShowUserDetails=new IhShowUserDetails();
@@ -38,6 +44,7 @@ public class ForBroadBandPlansAndUserDetails {
                     System.out.println("                   ");
                      ;break;
                 default:
+                    logger.warn("Invalid input in types of service");
                     System.out.println("Invalid input");break;
 
 

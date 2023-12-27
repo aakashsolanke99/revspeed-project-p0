@@ -45,6 +45,7 @@ public class Main {
                 System.out.println("Do you want to continue with the application press -1 Otherwise any key");
                 check=sc.nextInt();
             }catch (Exception E){
+                logger.error("Invalid input");
                 System.out.println("Enter Integer values");
             }
 

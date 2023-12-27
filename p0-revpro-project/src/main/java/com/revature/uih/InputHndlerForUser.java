@@ -1,13 +1,18 @@
 package com.revature.uih;
 
+import com.revature.dao.imple.BroadbandServicePlansDaoImple;
 import com.revature.dao.imple.UserDaoImple;
 import com.revature.util.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class InputHndlerForUser {
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
 
     UserDaoImple userDaoImple=new UserDaoImple();
     ForBroadBandPlansAndUserDetails forBroadBandPlansAndUserDetails=new ForBroadBandPlansAndUserDetails();
@@ -19,18 +24,21 @@ public class InputHndlerForUser {
             System.out.print("Enter your First Name :- ");
             String firstName = sc.nextLine();
             if (!isValidName(firstName)) {
+                logger.warn("Invalid first name. Please enter a valid name");
                 System.out.println("Invalid first name. Please enter a valid name.");
                 return;
             }
             System.out.print("Enter Yor Last Name :- ");
             String lastName = sc.nextLine();
             if (!isValidName(lastName)) {
+                logger.warn("Invalid last name. Please enter a valid name.");
                 System.out.println("Invalid last name. Please enter a valid name.");
                 return;
             }
             System.out.print("Enter your Email Id :- ");
             String email = sc.nextLine();
             if (!isValidEmail(email)) {
+                logger.warn("Invalid email format. Please enter a valid email address.");
                 System.out.println("Invalid email format. Please enter a valid email address.");
                 return; // Exit the program or handle the error as needed
             }
@@ -39,6 +47,7 @@ public class InputHndlerForUser {
             String password = sc.nextLine();
 //            Boolean isPasswordPresent = userDaoImple.passwordExists(password);
             if (!isValidPassword(password)) {
+                logger.warn("Invalid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit");
                 System.out.println("Invalid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit.");
                 return; // Exit the program or handle the error as needed
             }
@@ -48,6 +57,7 @@ public class InputHndlerForUser {
             String phNumber = sc.nextLine();
 
             if (!isValidPhoneNumber(phNumber)) {
+                logger.warn("Invalid phone number. Please enter a valid phone number.");
                 System.out.println("Invalid phone number. Please enter a valid phone number.");
                 return; // Exit the program or handle the error as needed
             }
@@ -56,7 +66,7 @@ public class InputHndlerForUser {
             String address = sc.nextLine();
 
             User user=new  User(firstName, lastName, email, password, phNumber, address);
-            System.out.println(user.toString());
+//            System.out.println(user.toString());
             userDaoImple.registorDao(user);
 
             System.out.print("If you want to continue Registration press - 1 or any key");
@@ -80,13 +90,10 @@ public class InputHndlerForUser {
             System.out.print("Enter Email :- ");
             String email = sc.nextLine();
             if (!isValidEmail(email)) {
+                logger.warn("Wrong Email Please provide Correct Email.");
                 System.out.println("Wrong Email Please provide Correct Email.");
                 return; // Exit the program or handle the error as needed
             }
-//            System.out.print("Enter Password :- ");
-//            String password=sc.nextLine();
-//            if (!isValidPassword(password)) {
-//                System.out.println("Wrong password please provide correct password");
 //
 //            }
             boolean validPassword = false;
@@ -99,6 +106,7 @@ public class InputHndlerForUser {
                 if (isValidPassword(password)) {
                     validPassword = true;
                 } else {
+                    logger.warn("Wrong password. Please provide a correct password.");
                     System.out.println("Wrong password. Please provide a correct password.");
                 }
             }
@@ -108,6 +116,7 @@ public class InputHndlerForUser {
                 userDaoImple.loginDao(email,password);
 //                forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();
             } catch (SQLException e) {
+
                 throw new RuntimeException(e);
             }
 //            forBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails();

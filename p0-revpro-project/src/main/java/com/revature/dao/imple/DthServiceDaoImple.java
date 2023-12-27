@@ -3,6 +3,8 @@ package com.revature.dao.imple;
 import com.revature.Main.GEmailSender;
 import com.revature.config.DbConnection;
 import com.revature.dao.DthServiceDao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -12,31 +14,11 @@ public class DthServiceDaoImple implements DthServiceDao {
     Connection connection = DbConnection.getConnection();
     GEmailSender gEmailSender=new GEmailSender();
     static  String from="aakashsolanke99@gmail.com";
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
+
     @Override
-    public void getDthPlansBasedOnMQEDao(String str) throws SQLException {
-        String query="{CALL getPlansBasedOnMQ(?)}";
-        CallableStatement cs=connection.prepareCall(query);
-        cs.setString(1,str);
-         ResultSet rs= cs.executeQuery();
-        System.out.println("======================================================= DTH Plans =========================================================");
-        System.out.println("                                          ");
-        System.out.println("==============================================================================================================================");
-        System.out.printf("%10s %10s %10s %19s %16s %32s","plan id","Plan Type","Language","channel category","Amount","chanel names");
-        System.out.println();
-        System.out.println("==============================================================================================================================");
-
-//        System.out.println("plan Id\tDth plans\tLanguage\tchannel category\tprice\tname");
-        while (rs.next()){
-            System.out.printf("%10s %10s %10s %18s %15s %38s",rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5),rs.getString(6));
-            System.out.println();
-        }
-        System.out.println("==============================================================================================================================");
-        System.out.println();
-    }
-
-
-     @Override
-        public void purchasedDthPlansOraddPlanToUser(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, java.time.LocalDate endDate) {
+    public void purchasedDthPlansOraddPlanToUser(int userId, int broadbandPlanId, int dthPlanId, LocalDate startDate, java.time.LocalDate endDate) {
 
         try {
             String query = "INSERT INTO user_service_link (user_id, br_sr_pl_id, dth_sr_pl_id, subscription_start_date, subscription_end_date,Broad_is_active,Dth_is_active) VALUES (?, ?, ?, ?, ?,?,?)";
@@ -57,11 +39,14 @@ public class DthServiceDaoImple implements DthServiceDao {
                     gEmailSender.sendEmail(email,from,subject,text);
 
                     System.out.println("Dth plan added successfully for user " + userId);
+                    logger.info("Dth plan added successfully for user " + userId);
                 } else {
                     System.out.println("Failed to add Dth plan for user " + userId);
+                    logger.warn("Failed to add Dth plan for user " + userId);
                 }
             }
         } catch (SQLException e) {
+            logger.error("Error during user adding plans to user ");
             e.printStackTrace();
         }
 
@@ -86,8 +71,46 @@ public class DthServiceDaoImple implements DthServiceDao {
         PreparedStatement ps= connection.prepareStatement(sql);
         ps.setInt(1,UserDaoImple.loginId);
         ps.executeUpdate();
-        System.out.println("Plan opt out");
+        int rowsAffected = ps.executeUpdate();
+        if (rowsAffected > 0) {
+
+            logger.info("Plane opt out successful");
+        } else {
+            logger.warn("Plan Not opt out successful");
+        }
     }
+
+    @Override
+    public void getDthPlansBasedOnMQEDao(String str) throws SQLException {
+        String query="{CALL getPlansBasedOnMQ(?)}";
+        CallableStatement cs=connection.prepareCall(query);
+        cs.setString(1,str);
+         ResultSet rs= cs.executeQuery();
+        System.out.println("======================================================= DTH Plans =========================================================");
+        System.out.println("                                          ");
+        System.out.println("==============================================================================================================================");
+        System.out.printf("%10s %10s %10s %19s %16s %32s","plan id","Plan Type","Language","channel category","Amount","chanel names");
+        System.out.println();
+        System.out.println("==============================================================================================================================");
+
+//        System.out.println("plan Id\tDth plans\tLanguage\tchannel category\tprice\tname");
+        while (rs.next()){
+            System.out.printf("%10s %10s %10s %18s %15s %38s",rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getDouble(5),rs.getString(6));
+            System.out.println();
+        }
+        System.out.println("==============================================================================================================================");
+        System.out.println();
+
+        int rowsAffected = cs.executeUpdate();
+        if (rowsAffected > 0) {
+
+            logger.info("DTH Planed successful fetch");
+        } else {
+            logger.warn("DTH Planed successful not fetch");
+        }
+    }
+
+
 
     @Override
     public void getSubscribedPlandForDTH() throws SQLException {
@@ -114,11 +137,15 @@ public class DthServiceDaoImple implements DthServiceDao {
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
 
-//        while (rs.next()){
-//            System.out.printf("%10s %10s %10s %18s %15s %38s %20s",rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDate(6),rs.getDate(7),rs.getString(8));
-//            System.out.println();
-//
-//        }
+
+        int rowsAffected = ps.executeUpdate();
+        if (rowsAffected > 0) {
+
+            logger.info("Active Broad Band Plan successful fetch");
+        } else {
+            logger.warn("Active Broad Band Plan not successful fetch");
+        }
+
 
     }
 

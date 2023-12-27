@@ -6,6 +6,8 @@ import com.revature.dao.imple.UserDaoImple;
 import com.revature.services.imple.BroadBandPlansServiceImple;
 import com.revature.services.imple.DthServicePlanServiceImple;
 import com.revature.util.BroadBandServicePlans;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -13,6 +15,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ShowPlans {
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
 
     DthServicePlanServiceImple dthServicePlanServiceImple=new DthServicePlanServiceImple();
     BroadBandPlansServiceImple broadBandPlansServiceImple=new BroadBandPlansServiceImple();

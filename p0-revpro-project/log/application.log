@@ -1,139 +1,180 @@
-00:10:16.000 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:13:34.578 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:14:06.361 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:20:10.610 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:23:24.710 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:25:56.372 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:26:22.954 [main] INFO  com.revature.Main.Main - Registration successful for user with email: mrunal@gmail.com
-00:31:15.075 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-00:31:25.983 [main] INFO  com.revature.Main.Main - login successesful
-14:33:00.301 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-14:34:08.053 [main] INFO  com.revature.Main.Main - Registration successful for user with email: achoure184@gmail.com
-14:51:09.206 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-14:52:50.654 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-14:53:03.649 [main] INFO  com.revature.Main.Main - login successful for emailachoure184@gmail.com
-14:54:11.292 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-14:55:13.701 [main] INFO  com.revature.Main.Main - login successful for emailachoure184@gmail.com
-15:38:33.663 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-15:38:51.049 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-15:39:05.602 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-20:52:45.897 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-20:53:14.426 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-20:53:14.447 [main] ERROR com.revature.Main.Main - Error during user logins
-java.sql.SQLSyntaxErrorException: Unknown column 'is_active' in 'field list'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+00:09:11.909 [main] ERROR com.revature.Main.Main - Error during user registration
+java.sql.SQLException: Incorrect integer value: 'phoneNumber' for column 'phone_no' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
 	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
 	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
-	at com.revature.dao.imple.DthServiceDaoImple.planOptOutForAll(DthServiceDaoImple.java:86)
-	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:90)
-	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:108)
-	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
-	at com.revature.Main.Main.main(Main.java:43)
-20:59:36.288 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:00:05.438 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-21:01:10.921 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:01:22.815 [main] INFO  com.revature.Main.Main - login successful for emailAakash@gmail.com
-21:02:48.557 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:03:11.725 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:03:38.246 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:04:06.027 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:05:41.030 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:05:59.210 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:07:34.676 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:08:17.945 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:08:33.549 [main] WARN  com.revature.Main.Main - PassWord Does not match / Wrong Password
-21:08:53.962 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-21:09:11.011 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:00:01.226 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:00:25.334 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:04:26.861 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:04:37.864 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:08:34.625 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:08:58.132 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:10:34.243 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:10:51.985 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:14:36.983 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:14:52.217 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:17:23.520 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:17:40.495 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:19:25.669 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:19:38.802 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:23:17.565 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:23:40.673 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:23:44.374 [main] ERROR com.revature.Main.Main - Error during user logins
-java.sql.SQLException: Parameter index out of range (1 > number of parameters, which is 0).
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1345)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1358)
-	at com.mysql.cj.jdbc.ClientPreparedStatement.setInt(ClientPreparedStatement.java:1536)
-	at com.revature.dao.imple.BroadbandServicePlansDaoImple.getSubscribedPlandForBroadBand(BroadbandServicePlansDaoImple.java:160)
-	at com.revature.uih.MonthlyQuaterlyYerlyPlansDetails.getAllBroadBandServicePlansMQY(MonthlyQuaterlyYerlyPlansDetails.java:42)
-	at com.revature.uih.ForBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails(ForBroadBandPlansAndUserDetails.java:28)
-	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:93)
-	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:108)
-	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
-	at com.revature.Main.Main.main(Main.java:38)
-22:51:52.162 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:53:09.358 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:54:17.300 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:57:11.359 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:57:30.609 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-22:58:21.500 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-22:58:43.958 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:00:34.073 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:00:49.866 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:03:17.194 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:03:31.024 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:05:27.076 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:05:40.161 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:08:47.253 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:08:58.529 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:10:11.776 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:10:23.853 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:11:12.360 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:11:26.521 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:11:55.633 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:12:09.904 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:12:24.896 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:16:11.737 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:16:23.999 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:17:47.866 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:18:01.657 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:23:20.258 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:24:11.357 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:24:33.794 [main] ERROR com.revature.Main.Main - Error during user logins
-java.sql.SQLDataException: Cannot determine value type from string 'sports'
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:114)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:73)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:96)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1431)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getInt(ResultSetImpl.java:830)
-	at com.revature.dao.imple.DthServiceDaoImple.getSubscribedPlandForDTH(DthServiceDaoImple.java:111)
-	at com.revature.uih.DthServicePlansDetails.getAllDthPlansDetails(DthServicePlansDetails.java:37)
-	at com.revature.uih.ForBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails(ForBroadBandPlansAndUserDetails.java:30)
-	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:93)
-	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:108)
-	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
-	at com.revature.Main.Main.main(Main.java:38)
-Caused by: com.mysql.cj.exceptions.DataConversionException: Cannot determine value type from string 'sports'
-	at com.mysql.cj.result.AbstractNumericValueFactory.createFromBytes(AbstractNumericValueFactory.java:65)
-	at com.mysql.cj.protocol.a.MysqlTextValueDecoder.decodeByteArray(MysqlTextValueDecoder.java:143)
-	at com.mysql.cj.protocol.result.AbstractResultsetRow.decodeAndCreateReturnValue(AbstractResultsetRow.java:135)
-	at com.mysql.cj.protocol.result.AbstractResultsetRow.getValueFromBytes(AbstractResultsetRow.java:243)
-	at com.mysql.cj.protocol.a.result.ByteArrayRow.getValue(ByteArrayRow.java:91)
-	at com.mysql.cj.jdbc.result.ResultSetImpl.getObject(ResultSetImpl.java:1324)
-	... 8 common frames omitted
-23:29:39.217 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:29:49.810 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
-23:30:16.397 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
-23:30:28.023 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
+	at com.revature.dao.imple.UserDaoImple.registorDao(UserDaoImple.java:50)
+	at com.revature.dao.imple.UserDaoImpleTest.testRegistorDao(UserDaoImpleTest.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+00:11:15.326 [main] ERROR com.revature.Main.Main - Error during user registration
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'passWord' for key 'users.pass_word'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.revature.dao.imple.UserDaoImple.registorDao(UserDaoImple.java:50)
+	at com.revature.dao.imple.UserDaoImpleTest.testRegistorDao(UserDaoImpleTest.java:48)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+00:15:32.793 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:17:28.414 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:18:25.482 [main] INFO  com.revature.Main.Main - Registration successful for user with email: aakashsolanke60@gmail.com
+00:18:57.902 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:20:11.536 [main] INFO  com.revature.Main.Main - login successful for emailaakashsolanke60@gmail.com
+00:22:56.160 [main] INFO  com.revature.Main.Main - password update Successfully for id :- 9
+00:24:35.695 [main] INFO  com.revature.Main.Main - First Name Update Successful for id:- 9
+00:24:35.696 [main] INFO  com.revature.Main.Main - if you want to update more press 1 otherwise any key
+00:24:49.118 [main] INFO  com.revature.Main.Main - Last Name Update Successful for id:- 9
+00:24:49.119 [main] INFO  com.revature.Main.Main - if you want to update more press 1 otherwise any key
+00:25:13.528 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:28:08.998 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:29:46.463 [main] INFO  com.revature.Main.Main - login successful for emailaakashsolanke60@gmail.com
+00:32:04.013 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:32:31.141 [main] INFO  com.revature.Main.Main - login successful for emailaakashsolanke60@gmail.com
+00:35:40.311 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+00:35:53.064 [main] INFO  com.revature.Main.Main - login successful for emailaakashsolanke60@gmail.com
+00:36:07.968 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main

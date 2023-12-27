@@ -7,11 +7,15 @@ import com.revature.services.BroadBandPlansService;
 import com.revature.services.imple.BroadBandPlansServiceImple;
 import com.revature.services.imple.UserServiceImple;
 import com.revature.util.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static java.lang.System.*;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class IhShowUserDetails {
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
 
     BroadbandServicePlansDaoImple broadbandServicePlansDaoImple=new BroadbandServicePlansDaoImple();
     static  UserServiceImple userServiceImple=new UserServiceImple();
@@ -44,6 +48,7 @@ public class IhShowUserDetails {
                 choice=sc.nextInt();
                 sc.nextLine();
             }catch (Exception e){
+                logger.error("Please provide Integer value");
                 System.out.println("Please provide Integer value");
             }
             String oldPassword=user1.getPassWord();
@@ -52,15 +57,17 @@ public class IhShowUserDetails {
             }else if(choice==2){
                 userServiceImple.pudateProfile(id);
             }else if(choice==3){
+                check=0;
                 return;
             }
             else{
+                logger.warn("Invalid choice please provide correct input");
                 out.println("Invalid choice please provide correct input");
             }
 
-            out.println("If you want to See or update profile press-1 otherwise any key");
-            check= sc.nextInt();
-            sc.nextLine();
+//            out.println("If you want to See or update profile press-1 otherwise any key");
+//            check= sc.nextInt();
+//            sc.nextLine();
 
         }while (check==1);
 
@@ -78,17 +85,20 @@ public class IhShowUserDetails {
 
            while (!validPassword) {
                System.out.print("Enter new Password again :- ");
+               logger.info("Enter new Password again :-");
                password = sc.nextLine();
 
                if (isValidPassword(password)) {
                    validPassword = true;
                    userServiceImple.changePassWordService(newPass,id);
                } else {
+                   logger.warn("Wrong password. Please provide a correct password.");
                    System.out.println("Wrong password. Please provide a correct password.");
                }
            }
 
        }else{
+           logger.warn("old password does not match");
            out.println("old password does not match ");
        }
         return true;

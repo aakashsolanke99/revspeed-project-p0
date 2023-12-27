@@ -1,11 +1,15 @@
 package com.revature.uih;
 
 import com.revature.dao.imple.BroadbandServicePlansDaoImple;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MonthlyQuaterlyYerlyPlansDetails {
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
     Scanner sc = new Scanner(System.in);
 
     ShowPlans showPlans=new ShowPlans();

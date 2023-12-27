@@ -5,6 +5,8 @@ import com.revature.config.DbConnection;
 import com.revature.dao.BroadbandServicePlansDao;
 import com.revature.util.BroadBandServicePlans;
 import com.revature.util.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -13,6 +15,8 @@ import java.util.List;
 
 public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
     GEmailSender gEmailSender=new GEmailSender();
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
     static Connection connection= DbConnection.getConnection();
     static  String from="aakashsolanke99@gmail.com";
     @Override
@@ -36,14 +40,18 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
 
                 broadBandServicePlans.add(broadBandServicePlans1);
             }
+            int rowsAffected = st.executeUpdate();
+            if (rowsAffected > 0) {
 
+                logger.info("All Broadband Planed successful fetch");
+            } else {
+                logger.warn("Not able to fetch plan successful");
+            }
 
         } catch (SQLException e) {
+            logger.error("Error during getting all plan");
             throw new RuntimeException(e);
         }
-//        for(BroadBandServicePlans p:broadBandServicePlans){
-//            System.out.println(p);
-//        }
 
         return  broadBandServicePlans;
     }
@@ -67,7 +75,15 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
 
                 broadBandServicePlansOnChoice.add(broadBandServicePlans);
             }
+
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                logger.info("Plans get Successfully");
+            } else {
+                logger.warn("Plans does Not get Successfully");
+            }
         } catch (SQLException e) {
+            logger.warn("Error during getting plans based on month year and quarter");
             throw new RuntimeException(e);
         }
 
@@ -91,6 +107,13 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
             user.setPhoneNumber(rs.getString(6));
             user.setAddress(rs.getString(7));
         }
+        int rowsAffected = ps.executeUpdate();
+        if (rowsAffected > 0) {
+            logger.info("Users Details get Successfully");
+        } else {
+            logger.warn("Users Details Not get Successfully");
+        }
+
 
         return user;
     }
@@ -116,13 +139,16 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
                     String email=UserDaoImple.userEmailId;
                     gEmailSender.sendEmail(email,from,subject,text);
                     System.out.println("BroadBand Service plan added successfully for user " + userId);
+                    logger.info("BroadBand Service plan added successfully for user " + userId);
                     System.out.println();
                 } else {
                     System.out.println("Failed to add service plan for user " + userId);
+                    logger.warn("Failed to add service plan for user " + userId);
                     System.out.println();
                 }
             }
         } catch (SQLException e) {
+            logger.error("Error during adding plan to user");
             e.printStackTrace();
         }
     }
@@ -146,7 +172,7 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
             PreparedStatement ps= connection.prepareStatement(sql);
             ps.setInt(1,UserDaoImple.loginId);
             ps.executeUpdate();
-            System.out.println("Plan opt out");
+//            System.out.println("Plan opt out");
         }
 
     @Override
@@ -174,12 +200,12 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println();
 
-//        while (rs.next()){
-//            System.out.printf("%10s %10s %10s %18s %15s %38s %20s",rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDate(6),rs.getDate(7),rs.getString(8));
-//            System.out.println();
-//
-//        }
-
+        int rowsAffected = ps.executeUpdate();
+        if (rowsAffected > 0) {
+            logger.info("Active plan Details get Successfully");
+        } else {
+            logger.warn("Active plan Details Not get Successfully");
+        }
 
 
     }
