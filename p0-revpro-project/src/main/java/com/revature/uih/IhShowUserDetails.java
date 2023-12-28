@@ -78,19 +78,20 @@ public class IhShowUserDetails {
        System.out.print("Enter Your old PassWord :- ");
        String oldPasswordForCheck=sc.nextLine();
        if(oldPasswordForCheck.equals(oldPass)){
-           System.out.println("Enter New PassWord :- ");
-           String newPass=sc.nextLine();
+//           System.out.println("Enter New PassWord :- ");
+//           String newPass=sc.nextLine();
            boolean validPassword = false;
-           String password = "";
+           String newpassword = "";
 
            while (!validPassword) {
-               System.out.print("Enter new Password again :- ");
+               System.out.print("Enter new Password  :- ");
                logger.info("Enter new Password again :-");
-               password = sc.nextLine();
+               newpassword = sc.nextLine();
 
-               if (isValidPassword(password)) {
+               if (isValidPassword(newpassword)) {
+                   userServiceImple.changePassWordService(newpassword,id);
                    validPassword = true;
-                   userServiceImple.changePassWordService(newPass,id);
+
                } else {
                    logger.warn("Wrong password. Please provide a correct password.");
                    System.out.println("Wrong password. Please provide a correct password.");

@@ -530,3 +530,29 @@ java.sql.SQLException: Can not issue executeUpdate() or executeLargeUpdate() wit
 2023-12-28 11:16:26,562 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:42] -- Dth plan added successfully for user 6
 2023-12-28 11:16:35,578 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:144] -- Active Broad Band Plan successful fetch
 2023-12-28 11:17:36,093 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [ForBroadBandPlansAndUserDetails.java:47] -- Invalid input in types of service
+2023-12-28 11:29:12,833 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:29:12,853 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 11:29:24,641 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 11:29:24,645 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 11:29:41,981 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:29:50,636 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 6
+2023-12-28 11:31:11,818 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:31:11,838 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 11:31:20,132 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [InputHndlerForUser.java:93] -- Wrong Email Please provide Correct Email.
+2023-12-28 11:31:26,672 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 11:31:40,229 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 11:31:40,233 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 11:31:53,026 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:31:58,249 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 6
+2023-12-28 11:36:19,551 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:36:19,569 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 11:36:32,017 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 11:36:32,020 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 11:36:43,820 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:36:49,870 INFO [main] c.r.M.Main [UserDaoImple.java:118] -- password update Successfully for id :- 6
+2023-12-28 11:40:35,161 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:40:39,823 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:96] -- Wrong password. Please provide a correct password.
+2023-12-28 11:40:39,823 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:40:52,045 INFO [main] c.r.M.Main [UserDaoImple.java:118] -- password update Successfully for id :- 6
+2023-12-28 11:41:13,872 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:41:22,130 INFO [main] c.r.M.Main [UserDaoImple.java:118] -- password update Successfully for id :- 6

@@ -108,10 +108,11 @@ public class UserDaoImple implements UserDao {
 
     @Override
     public void changePassword(String newPass,int id) throws SQLException {
-        String query=" update  users set pass_word=? where user_id=?";
+        String query="update users set pass_word=? where user_id=?";
         PreparedStatement ps=connection.prepareStatement(query);
         ps.setString(1,newPass);
         ps.setInt(2,id);
+        ps.executeUpdate();
 //        ResultSet rs= ps.executeQuery();
         System.out.println("password update Successfully");
         logger.info("password update Successfully for id :- "+id);
