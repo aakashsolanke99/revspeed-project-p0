@@ -178,3 +178,216 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'passWord' fo
 00:35:40.311 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
 00:35:53.064 [main] INFO  com.revature.Main.Main - login successful for emailaakashsolanke60@gmail.com
 00:36:07.968 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+09:21:38.364 [main] INFO  com.revature.config.DbConnection - Connection Successful
+09:21:38.385 [main] INFO  com.revature.Main.Main - Example log from class com.revature.Main.Main
+09:22:05.344 [main] INFO  com.revature.Main.Main - login successful for emailmrunal@gmail.com
+09:22:05.366 [main] WARN  c.r.d.i.BroadbandServicePlansDaoImple - Plan Not opt out successful
+2023-12-28 09:24:14,963 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:24:14,983 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 09:24:22,492 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [InputHndlerForUser.java:27] -- Invalid first name. Please enter a valid name
+2023-12-28 09:24:36,797 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:24:36,817 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 09:24:49,230 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 09:24:49,233 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 09:26:37,829 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:26:37,847 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 09:26:58,722 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 09:26:58,725 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 09:28:19,868 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:29:16,702 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:30:47,538 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:30:57,267 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:31:08,720 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:31:17,910 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:31:26,603 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:31:35,384 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:31:44,889 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:32:01,071 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:32:18,535 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:32:43,135 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:33:17,199 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:33:47,466 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:51:01,546 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:51:17,228 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:51:25,971 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:51:39,284 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:52:13,506 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:52:35,148 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:52:39,354 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:52:39,383 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:53:45,778 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:53:49,911 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:53:49,947 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:54:23,962 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:54:24,339 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:54:24,387 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:55:08,592 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:55:25,008 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:55:53,492 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:55:53,769 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 09:56:12,217 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 09:56:15,998 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:00:20,739 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:01:00,665 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:01:04,508 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:01:07,710 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:02:44,178 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:02:44,200 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 10:03:07,835 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:03:07,871 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 10:06:45,965 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:06:46,013 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 10:08:00,110 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:08:31,429 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:08:42,706 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:08:54,208 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:09:06,811 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:09:18,372 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:09:59,442 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:10:36,117 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:10:39,927 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:10:43,512 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:12:20,670 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:12:49,113 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:13:11,231 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:13:36,203 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:14:42,857 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:14:46,457 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:14:49,907 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:15:21,985 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:15:33,635 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:16:01,563 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:16:17,417 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:16:34,277 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:17:14,409 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:18:04,923 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:19:46,771 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:20:23,150 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:20:23,435 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:20:48,087 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:20:51,860 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:20:55,925 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:24:48,918 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:24:49,207 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:25:39,129 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:25:39,170 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:49] -- Error during user adding plans to user 
+2023-12-28 10:25:52,525 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:27:18,996 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:28:51,529 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:30:36,276 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:31:03,483 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:32:29,242 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:32:29,703 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:35:51,496 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:35:51,798 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:37:18,581 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:37:18,860 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:39:31,225 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:39:31,597 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:39:56,692 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:40:08,914 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:40:09,239 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 10:40:30,149 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:40:30,489 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 10:40:43,176 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:40:55,744 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:43:14,849 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:43:15,683 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:109] -- DTH Planed successful not fetch
+2023-12-28 10:43:41,489 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:43:58,363 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:45:10,233 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:45:10,938 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:146] -- Active Broad Band Plan not successful fetch
+2023-12-28 10:45:30,160 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:46:05,592 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:46:05,871 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:47:58,341 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:47:58,655 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:48:48,083 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:48:48,374 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:49:15,233 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:49:15,558 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:50:06,319 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:50:11,776 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:49] -- Error during user adding plans to user 
+2023-12-28 10:50:11,793 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 10:50:12,251 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:146] -- Active Broad Band Plan not successful fetch
+2023-12-28 10:50:12,272 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 10:50:12,285 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:109] -- DTH Planed successful not fetch
+2023-12-28 10:50:12,746 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 10:50:16,037 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 10:51:38,911 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:51:39,296 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:46] -- All Broadband Planed successful fetch
+2023-12-28 10:52:14,897 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:52:15,185 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:46] -- All Broadband Planed successful fetch
+2023-12-28 10:53:14,750 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:53:15,076 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:151] -- Error during adding plan to user
+2023-12-28 10:53:58,920 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:54:27,585 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:54:54,442 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:56:10,962 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 10:56:23,473 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:06:06,598 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:06:06,995 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:207] -- Active plan Details Not get Successfully
+2023-12-28 11:06:20,885 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:06:21,226 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:207] -- Active plan Details Not get Successfully
+2023-12-28 11:06:50,859 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:07:02,987 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:08:41,684 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:09:08,821 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:09:09,190 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:83] -- Plans does Not get Successfully
+2023-12-28 11:09:21,657 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:09:22,021 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:46] -- All Broadband Planed successful fetch
+2023-12-28 11:09:22,093 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:83] -- Plans does Not get Successfully
+2023-12-28 11:09:22,128 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:207] -- Active plan Details Not get Successfully
+2023-12-28 11:09:42,675 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:09:46,534 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:46] -- All Broadband Planed successful fetch
+2023-12-28 11:09:46,634 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:83] -- Plans does Not get Successfully
+2023-12-28 11:09:46,673 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:207] -- Active plan Details Not get Successfully
+2023-12-28 11:09:48,531 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:49] -- Error during user adding plans to user 
+2023-12-28 11:09:48,555 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:45] -- Failed to add Dth plan for user 0
+2023-12-28 11:09:49,124 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:146] -- Active Broad Band Plan not successful fetch
+2023-12-28 11:09:49,160 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 11:09:49,178 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:109] -- DTH Planed successful not fetch
+2023-12-28 11:09:49,464 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 0
+2023-12-28 11:09:52,746 ERROR [main] c.r.d.i.BroadbandServicePlansDaoImple [GEmailSender.java:52] -- Error in Email sending 
+2023-12-28 11:10:20,365 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:10:20,409 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 11:10:59,827 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 11:10:59,835 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 11:11:02,965 ERROR [main] c.r.M.Main [UserDaoImple.java:104] -- Error during user logins
+java.sql.SQLException: Can not issue executeUpdate() or executeLargeUpdate() with statements that produce result sets
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1038)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.revature.dao.imple.BroadbandServicePlansDaoImple.getDetails(BroadbandServicePlansDaoImple.java:110)
+	at com.revature.uih.IhShowUserDetails.UserDetailsAndOperation(IhShowUserDetails.java:32)
+	at com.revature.uih.ForBroadBandPlansAndUserDetails.getAllBroadBandServicePlansAndUserDetails(ForBroadBandPlansAndUserDetails.java:40)
+	at com.revature.dao.imple.UserDaoImple.loginDao(UserDaoImple.java:93)
+	at com.revature.uih.InputHndlerForUser.getDetailsForLogin(InputHndlerForUser.java:116)
+	at com.revature.services.imple.UserServiceImple.login(UserServiceImple.java:23)
+	at com.revature.Main.Main.main(Main.java:38)
+2023-12-28 11:12:15,125 INFO [main] c.r.c.DbConnection [DbConnection.java:26] -- Connection Successful
+2023-12-28 11:12:15,154 INFO [main] c.r.M.Main [Main.java:28] -- Example log from class com.revature.Main.Main
+2023-12-28 11:12:37,741 INFO [main] c.r.M.Main [UserDaoImple.java:87] -- login successful for emailmrunal@gmail.com
+2023-12-28 11:12:37,747 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:79] -- Plan Not opt out successful
+2023-12-28 11:13:06,444 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [IhShowUserDetails.java:88] -- Enter new Password again :-
+2023-12-28 11:13:18,376 INFO [main] c.r.M.Main [UserDaoImple.java:117] -- password update Successfully for id :- 6
+2023-12-28 11:14:47,147 INFO [main] c.r.M.Main [UserDaoImple.java:150] -- First Name Update Successful for id:- 6
+2023-12-28 11:14:47,148 INFO [main] c.r.M.Main [UserDaoImple.java:208] -- if you want to update more press 1 otherwise any key
+2023-12-28 11:15:09,700 INFO [main] c.r.M.Main [UserDaoImple.java:162] -- Last Name Update Successful for id:- 6
+2023-12-28 11:15:09,701 INFO [main] c.r.M.Main [UserDaoImple.java:208] -- if you want to update more press 1 otherwise any key
+2023-12-28 11:15:21,517 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:46] -- All Broadband Planed successful fetch
+2023-12-28 11:15:23,436 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:81] -- Plans get Successfully
+2023-12-28 11:15:24,662 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:81] -- Plans get Successfully
+2023-12-28 11:15:27,543 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:81] -- Plans get Successfully
+2023-12-28 11:15:35,849 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:142] -- BroadBand Service plan added successfully for user 6
+2023-12-28 11:15:41,886 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [BroadbandServicePlansDaoImple.java:205] -- Active plan Details get Successfully
+2023-12-28 11:16:09,668 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:107] -- DTH Planed successful fetch
+2023-12-28 11:16:13,936 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:107] -- DTH Planed successful fetch
+2023-12-28 11:16:26,562 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:42] -- Dth plan added successfully for user 6
+2023-12-28 11:16:35,578 INFO [main] c.r.d.i.BroadbandServicePlansDaoImple [DthServiceDaoImple.java:144] -- Active Broad Band Plan successful fetch
+2023-12-28 11:17:36,093 WARN [main] c.r.d.i.BroadbandServicePlansDaoImple [ForBroadBandPlansAndUserDetails.java:47] -- Invalid input in types of service

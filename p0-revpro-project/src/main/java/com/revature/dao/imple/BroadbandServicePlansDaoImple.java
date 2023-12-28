@@ -107,12 +107,12 @@ public class BroadbandServicePlansDaoImple implements BroadbandServicePlansDao {
             user.setPhoneNumber(rs.getString(6));
             user.setAddress(rs.getString(7));
         }
-        int rowsAffected = ps.executeUpdate();
-        if (rowsAffected > 0) {
-            logger.info("Users Details get Successfully");
-        } else {
-            logger.warn("Users Details Not get Successfully");
-        }
+//        int rowsAffected = ps.executeUpdate();
+//        if (rowsAffected > 0) {
+//            logger.info("Users Details get Successfully");
+//        } else {
+//            logger.warn("Users Details Not get Successfully");
+//        }
 
 
         return user;

@@ -121,7 +121,7 @@ public class DthServiceDaoImple implements DthServiceDao {
         ResultSet rs= ps.executeQuery();
 
         System.out.println(rs);
-        System.out.println("======================================================= Active Broad Band Plans =========================================================");
+        System.out.println("======================================================= Active DTH  Plans =========================================================");
         System.out.println("                                          ");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("%10s %10s %15s %10s %15s %12s %20s","service Name","DTH plan","Language","channel category","Amount","subscription start date","subscription end date");

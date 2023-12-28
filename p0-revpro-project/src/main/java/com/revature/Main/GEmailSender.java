@@ -1,11 +1,17 @@
 package com.revature.Main;
 
 import java.util.Properties;
+
+import com.revature.dao.imple.BroadbandServicePlansDaoImple;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class GEmailSender {
+    public static final Logger logger= LoggerFactory.getLogger(BroadbandServicePlansDaoImple.class);
+
     public boolean sendEmail(String to, String from, String subject, String text) {
         boolean flag = false;
 
@@ -43,6 +49,7 @@ public class GEmailSender {
             Transport.send(message);
             flag = true;
         } catch (Exception e) {
+            logger.error("Error in Email sending ");
             e.printStackTrace();
         }
 
